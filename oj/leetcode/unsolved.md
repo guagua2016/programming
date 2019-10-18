@@ -1,0 +1,12 @@
+- 42. Trapping Rain Water: https://leetcode.com/problems/trapping-rain-water/
+- 33. Search in Rotated Sorted Array https://leetcode.com/problems/search-in-rotated-sorted-array/
+- 45. Jump Game II Time Limit Exceeded.
+- 81. Search in Rotated Sorted Array II, Boundary conditions solution:https://www.cnblogs.com/grandyang/p/4325840.html
+- 128. Longest Consecutive Sequence
+- 287. Find the Duplicate Number
+- 442. Find All Duplicates in an Array
+- 457. Circular Array Loop
+- 560. Subarray Sum Equals K
+- 621. Task Scheduler. https://leetcode.com/problems/task-scheduler/
+- 714. Best Time to Buy and Sell Stock with Transaction Fee
+- 719. Find K-th Smallest Pair Distance
