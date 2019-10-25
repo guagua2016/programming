@@ -1,5 +1,7 @@
 | # | Title |
 |---| ----- | 
+|1|[Two Sum](https://github.com/wxquare/programming/blob/master/oj/leetcode/leetcode1.cpp)
+|2|[]
 |179|[Largest Number](https://github.com/wxquare/programming/blob/master/oj/leetcode/leetcode179.cpp)
 |698|[Partition to K Equal Sum Subsets](https://github.com/wxquare/programming/blob/master/oj/leetcode/leetcode698.cpp)
 |798|[Smallest Rotation with Highest Score](https://github.com/wxquare/programming/blob/master/oj/leetcode/leetcode798.cpp)
