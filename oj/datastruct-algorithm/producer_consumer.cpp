@@ -21,6 +21,7 @@ std::condition_variable cv2; //for 20;
 
 void produce(int x){
     std::unique_lock<std::mutex> lck(m);
+    
     //cycle check.
     while(q.size()>100){
         cv1.wait(lck);

@@ -1,32 +1,57 @@
 #include <iostream>
-#include <mutex>
 
-std::mutex mtx;
-class Singleton {
-private:
-    Singleton() {}
-    Singleton(const Singleton& a);
-    Singleton& operator=(const Singleton&);
-    static Singleton * instance;
+
+
+class ConcreteElement1;
+class ConcreteElement2;
+
+class Visitor{
 public:
-    static Singleton* getInstance() {
-        if (instance == nullptr) {
-            mtx.lock();
-            if((instance == nullptr)){
-                instance =  new Singleton();
-            }
-            mtx.unlock();
-        }
-        return instance;
+    virtual ~Visitor(){};
+    virtual void visit(ConcreteElement1&) = 0;
+    virtual void visit(ConcreteElement2&) = 0;
+};
+
+class ConcreteVisitor : public Visitor{
+public:
+    virtual ~ConcreteVisitor(){};
+    
+    void visit(ConcreteElement1& e){
+        std::cout << "ConcreteElement1::visit" << std::endl;
+    }
+    void visit(ConcreteElement2& e){
+        std::cout << "ConcreteElement2::visit" << std::endl;
     }
 };
-Singleton* Singleton::instance = nullptr;
+
+class Element{
+public:
+    virtual ~Element(){};
+    virtual void accept(Visitor&) = 0;
+};
+
+class ConcreteElement1 : public Element{
+public:
+    virtual ~ConcreteElement1(){}
+    void accept(Visitor& v){
+        v.visit(*this);
+    }
+};
+class ConcreteElement2 : public Element{
+public:
+    virtual ~ConcreteElement2(){};
+    void accept(Visitor& v){
+        v.visit(*this);
+    }
+
+};
+
 
 int main(){
-    Singleton* instance1 = Singleton::getInstance();
-    Singleton* instance2 = Singleton::getInstance();
-    if(instance1 == instance2){
-        std::cout << "singleton" << std::endl;
-    }
+    ConcreteVisitor visitor;
+    ConcreteElement1 emt1 = ConcreteElement1();
+    emt1.accept(visitor);
+    ConcreteElement2 emt2 = ConcreteElement2();
+    emt2.accept(visitor);
     return 0;
 }

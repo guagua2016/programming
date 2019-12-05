@@ -1,32 +1,40 @@
 #include <iostream>
-#include <mutex>
 
-std::mutex mtx;
-class Singleton {
-private:
-    Singleton() {}
-    Singleton(const Singleton& a);
-    Singleton& operator=(const Singleton&);
-    static Singleton * instance;
+enum CTYPE {PRODUCTA,PRODUCTB};
+class Product{
 public:
-    static Singleton* getInstance() {
-        if (instance == nullptr) {
-            mtx.lock();
-            if((instance == nullptr)){
-                instance =  new Singleton();
-            }
-            mtx.unlock();
-        }
-        return instance;
+    virtual void func() = 0;
+    virtual ~Product(){};
+};
+
+class ProductA : public Product{
+public:
+    void func(){
+        std::cout << "create ProductA..." << std::endl;
     }
 };
-Singleton* Singleton::instance = nullptr;
+
+class ProductB : public Product{
+public:
+    void func(){
+        std::cout << "create ProductB..." << std::endl;
+    }
+};
+
+class Factory{
+public:
+    static Product* createProduct(enum CTYPE ctype){
+        if(ctype == PRODUCTA)
+            return new ProductA;
+        else if(ctype == PRODUCTB){
+            return new ProductB;
+        }else
+            return nullptr;
+    }
+};
 
 int main(){
-    Singleton* instance1 = Singleton::getInstance();
-    Singleton* instance2 = Singleton::getInstance();
-    if(instance1 == instance2){
-        std::cout << "singleton" << std::endl;
-    }
+    Product* p = Factory::createProduct(CTYPE::PRODUCTA);
+    p->func();
     return 0;
 }
