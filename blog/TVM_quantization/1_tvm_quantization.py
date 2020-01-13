@@ -28,62 +28,154 @@ import time
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
+from tvm.contrib.debugger import debug_runtime as graph_runtime
+
+
+# # Tensorflow imports
+# import tensorflow as tf
+
+# # Tensorflow utility functions
+# import tvm.relay.testing.tf as tf_testing
+
+# import tensorflow as tf
+# try:
+#     tf_compat_v1 = tf.compat.v1
+# except ImportError:
+#     tf_compat_v1 = tf
+
 
 Config = namedtuple('Config', ['model', 'nbit_input',  'dtype_input', 'nbit_output', 'dtype_output', 'global_scale', 'batch_size'])
 
 # Set number of threads used for tuning based on the number of
 # physical CPU cores on your machine.
-num_threads = 2
-os.environ["TVM_NUM_THREADS"] = str(num_threads)
+# num_threads = 2
+# os.environ["TVM_NUM_THREADS"] = str(num_threads)
 
-def get_model(model_name, batch_size, qconfig, target=None, original=False, simulated=False):
+def get_mxnet_model(model_name, batch_size):
+    """Get mxnet model.
+
+    Parameters
+    ----------
+    model_name : str
+    batch_size : num
+
+    Returns
+    -------
+    mod : tvm.relay.Module
+    params : dict of str to tvm.NDArray
+    input_shape : tuple
+
+    """
+
     gluon_model = gluon.model_zoo.vision.get_model(model_name, pretrained=True)
     img_size = 299 if model_name == 'inceptionv3' else 224
     input_shape = (batch_size, 3, img_size, img_size)
     mod, params = relay.frontend.from_mxnet(gluon_model, {"data": input_shape})
-    net = mod['main']
 
-    start_time = time.time()
-    with relay.build_config(opt_level=3):
-        qfunc = relay.quantize.prerequisite_optimize(net, params=params)
-    logging.debug('original')
-    logging.debug(qfunc.astext(show_meta_data=False))
-    if original:
-        return qfunc
+    return mod,params,input_shape
+
+
+
+
+def get_tf_model_InceptionV1(model_path):
+
+    with tf_compat_v1.gfile.GFile(model_path, 'rb') as f:
+        graph_def = tf_compat_v1.GraphDef()
+        graph_def.ParseFromString(f.read())
+        graph = tf.import_graph_def(graph_def, name='')
+        # Call the utility to import the graph definition into default graph.
+        graph_def = tf_testing.ProcessGraphDefParam(graph_def)
+        # Add shapes to the graph.
+        with tf_compat_v1.Session() as sess:
+            graph_def = tf_testing.AddShapesToGraphDef(sess, 'softmax')
+
+    x = (299,299)
+    layout = None
+    shape_dict = {'DecodeJpeg/contents': x}
+    dtype_dict = {'DecodeJpeg/contents': 'uint8'}
+    mod, params = relay.frontend.from_tensorflow(graph_def,
+                                                 layout=layout,
+                                                 shape=shape_dict)
+
+    return mod,params,shape_dict
+
+
+
+def quantize_relay_module(mod, params, qconfig=None):
+    """ Quantize the relay module with qconfig options.
+
+    Parameters:
+    ------
+    mod : tvm.relay.module
+        The original module.
+
+    qconfig : tvm.relay.quantize.quantize.QConfig
+        The quantization configuration
+
+    Returns:
+    ------
+    qfunc : vm.relay.expr.Function
+        The graph after quantization
+    
+    """
+
+    # default qconfig
+    if not qconfig:
+        qconfig = qtz.qconfig()
 
     with qconfig:
         logging.debug('current quantize config')
         logging.debug(qtz.current_qconfig())
-        qfunc = qtz.quantize(qfunc)
+        mod['main'] = qtz.quantize(mod['main'],params=params)
         logging.debug('after quantize')
-        logging.debug(qfunc.astext(show_meta_data=False))
-
-    build_time = time.time() - start_time
-    logging.info(model_name + " inference graph build in {0:.2f}s".format(build_time))
+        logging.debug(mod['main'].astext(show_meta_data=False))
+    return mod
 
 
-    # os._exit(-1)
+def autotvm_tune(func,params,target):
+    """
 
-    return qfunc, params, input_shape
+    Parameters:
+    ----------
+    func : relay.expr.Function
+    params : dict of str to numpy array
+    target : tvm.target.Target
+    ops : List of relay.op
+
+    """
+
+    # Array of autotvm.task.Task
+    tasks = autotvm.task.extract_from_program(func, target=target,
+                                            params=params, ops=(relay.op.nn.conv2d,))
+    # Check tasks.
+    for i in range(len(tasks)):
+        op_name = tasks[i].workload[0]
+        if op_name == 'conv2d':
+            func_create = 'topi_x86_conv2d_NCHWc'
+        elif op_name == 'depthwise_conv2d_nchw':
+            func_create = 'topi_x86_depthwise_conv2d_NCHWc_from_nchw'
+        else:
+            raise ValueError("Tuning {} is not supported on x86".format(op_name))
+
+        print ( "[Create Task %2d/%2d (%s, %s) ] " % (i+1, len(tasks), tasks[i].name, tasks[i].workload[0]))
+
+        tsk = autotvm.task.create(func_create, args=tasks[i].args,
+                                    target=tasks[i].target, template_key='direct')
+        tsk.workload = tasks[i].workload
+        tasks[i] = tsk
 
 
-###################################################################
-# Begin Tuning
-# ------------
-# Now we can extract tuning tasks from the network and begin tuning.
-# Here, we provide a simple utility function to tune a list of tasks.
-# This function is just an initial implementation which tunes them in sequential order.
-# We will introduce a more sophisticated tuning scheduler in the future.
+    # turning option.
+    tuner='xgb'
+    n_trial=100
+    early_stopping=None
+    log_filename='tuning.log'
+    use_transfer_learning=True
+    measure_option = autotvm.measure_option(
+                builder=autotvm.LocalBuilder(timeout=10),
+                runner=autotvm.LocalRunner(number=10, repeat=1, min_repeat_ms=1000))
 
-# You can skip the implementation of this function for this tutorial.
-def tune_tasks(tasks,
-               measure_option,
-               tuner='xgb',
-               n_trial=1000,
-               early_stopping=None,
-               log_filename='tuning.log',
-               use_transfer_learning=True):
-               
+
     # create tmp log file
     tmp_log_file = log_filename + ".tmp"
     if os.path.exists(tmp_log_file):
@@ -120,105 +212,121 @@ def tune_tasks(tasks,
     autotvm.record.pick_best(tmp_log_file, log_filename)
     os.remove(tmp_log_file)
 
-########################################################################
-# Finally, we launch tuning jobs and evaluate the end-to-end performance.
-def tune_and_evaluate(tuning_opt, cfg, target, ctx, log_file):
-    qconfig = qtz.qconfig(skip_conv_layers=[0],
-                        nbit_input=cfg.nbit_input,
-                        nbit_weight=cfg.nbit_input,
-                        global_scale=cfg.global_scale,
-                        dtype_input=cfg.dtype_input,
-                        dtype_weight=cfg.dtype_input,
-                        dtype_activation=cfg.dtype_output,
-                        debug_enabled_ops=None)
 
-    # extract workloads from relay program
-    logging.info("Extract tasks...")
-    mod, params, input_shape = get_model(cfg.model, cfg.batch_size, qconfig, target)
 
-    tasks = autotvm.task.extract_from_program(mod, target=target,
-                                            params=params, ops=(relay.op.nn.conv2d,))
-    for i in range(len(tasks)):
-        op_name = tasks[i].workload[0]
-        if op_name == 'conv2d':
-            func_create = 'topi_x86_conv2d_NCHWc'
-        elif op_name == 'depthwise_conv2d_nchw':
-            func_create = 'topi_x86_depthwise_conv2d_NCHWc_from_nchw'
-        else:
-            print ("Tuning {} is not supported on x86")
-            raise ValueError("Tuning {} is not supported on x86".format(op_name))
+def build_module(mod,params,target,best_records=None):
 
-        print ( "[Create Task %2d/%2d (%s, %s) ] " % (i+1, len(tasks), tasks[i].name, tasks[i].workload[0]))
-
-        tsk = autotvm.task.create(func_create, args=tasks[i].args,
-                                    target=tasks[i].target, template_key='direct')
-        tsk.workload = tasks[i].workload
-        tasks[i] = tsk
-
-    # run tuning tasks
-    logging.info("Tuning...")
-    tune_tasks(tasks, **tuning_opt)
-
-    # compile kernels with history best records
-    with autotvm.apply_history_best(log_file):
-        logging.info("Compile...")
+    # build module
+    if best_records:
+        with autotvm.apply_history_best(best_records):
+            with relay.build_config(opt_level=3):
+                graph, lib, params = relay.build_module.build(mod, target=target, params=params)
+    else:
         with relay.build_config(opt_level=3):
-            graph, lib, params = relay.build_module.build(
-                mod, target=target, params=params)
+            graph, lib, params = relay.build_module.build(mod, target=target, params=params)
 
-        # export library
-        tmp = tempdir()
-        filename = "net.tar"
-        lib.export_library(tmp.relpath(filename))
-
-        # load parameters
-        module = tvm.contrib.graph_runtime.create(graph, lib, ctx)
-        data_tvm = tvm.nd.array((np.random.uniform(size=input_shape)).astype('float32'))
-        module.set_input('data', data_tvm)
-        module.set_input(**params)
-
-        # evaluate
-        logging.info("Evaluate inference time cost...")
-        ftimer = module.module.time_evaluator("run", ctx, number=1, repeat=60)
-        prof_res = np.array(ftimer().results) * 1000  # convert to millisecond
-        logging.info("Mean inference time (std dev): %.2f ms (%.2f ms)" % (np.mean(prof_res), np.std(prof_res)))
+    return graph,lib,params
 
 
-if __name__ == "__main__":
+def save_compiled_module(graph,lib,params,dir_path):
 
-    target = 'llvm -mcpu=core-avx2'
+    if not os.path.exists(dir_path):
+        os.mkdir(dir_path)
+
+    lib_file = os.path.join(dir_path,"lib.tar")
+    graph_file = os.path.join(dir_path,'graph.json')
+    params_file = os.path.join(dir_path,'param.params')
+
+    lib.export_library(lib_file)
+    with open(graph_file,"w") as fo:
+        fo.write(graph)
+    with open(params_file,"wb") as fo:
+        fo.write(relay.save_param_dict(params))
+
+
+def load_module(dir_path,ctx=None,debug=False):
+
+
+    lib_file = os.path.join(dir_path,"lib.tar")
+    graph_file = os.path.join(dir_path,'graph.json')
+    params_file = os.path.join(dir_path,'param.params')
+
+    lib = tvm.module.load(lib_file)
+    graph = open(graph_file).read()
+    params = bytearray(open(params_file, "rb").read())
+
+    if not ctx:
+        ctx = tvm.cpu()
+
+    # load parameters
+    if not debug:
+        module = tvm.contrib.graph_runtime.create(graph, lib, ctx)  # Deploye Module
+    else:
+        module = tvm.contrib.debugger.debug_runtime.create(graph,lib,ctx)
+    module.load_params(params)
+    # module.set_input(**params)
+    return module
+
+
+
+def evaluate(mod,input_shape,ctx):
+
+    data_tvm = tvm.nd.array((np.random.uniform(size=input_shape)).astype('float32'))
+
+    start = time.clock()
+    for i in range(10):
+        mod.run(data=data_tvm)
+    print("inference time: ",(time.clock() - start)/10)
+
+
+    mod.set_input('data', data_tvm)
+    # mod.set_input(**params)
+    # evaluate
+    logging.info("Evaluate inference time cost...")
+    ftimer = mod.module.time_evaluator("run", ctx, number=1, repeat=60)
+    prof_res = np.array(ftimer().results) * 1000  # convert to millisecond
+    logging.info("Mean inference time (std dev): %.2f ms (%.2f ms)" % (np.mean(prof_res), np.std(prof_res)))
+
+
+    # out = mod.get_output(0).asnumpy()
+    ## Todo
+
+
+if __name__ == '__main__':
+    
+    mod,params,input_shape = get_mxnet_model('resnet18_v1', 1)
+
+    logging.info(mod['main'].astext(show_meta_data=False))
+
+
+    # mod,params,_ = get_tf_model_InceptionV1("/home/terse/code/programming/blog/TVM_quantization/tf/InceptionV1/classify_image_graph_def-with_shapes.pb")
+
     ctx = tvm.cpu()
+    target = 'llvm -mcpu=core-avx2'
 
-    configs = [
-        Config('resnet18_v1', nbit_input=8, dtype_input='int8', nbit_output=8, dtype_output='int8', global_scale=8.0, batch_size=1),
-        Config('resnet18_v1', nbit_input=16, dtype_input='int16', nbit_output=16, dtype_output='int16', global_scale=8.0, batch_size=1),
-        # Config('mobilenetv2_1.0', nbit_input=8, dtype_input='int8', nbit_output=8, dtype_output='int8', global_scale=4.0, batch_size=1),
-        # Config('mobilenetv2_1.0', nbit_input=16, dtype_input='int16', nbit_output=16, dtype_output='int16', global_scale=4.0, batch_size=1),
-    ]
+    # Configure the quantization behavior
+    qconfig = qtz.qconfig(skip_conv_layers=[0],
+                    nbit_input=8,
+                    nbit_weight=8,
+                    global_scale=8.0,
+                    dtype_input='int8',
+                    dtype_weight='int8',
+                    dtype_activation='int8',
+                    debug_enabled_ops=None)
 
-    for config in configs:
-        logging.info('Start testing for %s', config.model)
+    mod['main'] = qtz.prerequisite_optimize(mod['main'],params=params)
+    logging.info(mod['main'].astext(show_meta_data=False))
 
-        log_file = "%s_%s.log" % (config.model, config.dtype_input)
-        if os.path.exists(log_file):
-            os.remove(log_file)
+    import os
+    os._exit(-1)
 
-        #### TUNING OPTION ####
-        tuning_option = {
-            'log_filename': log_file,
+    mod = quantize_relay_module(mod,params,qconfig)
 
-            'tuner': 'random',
-            'n_trial': 10,
-            'early_stopping': None,
+    # autotvm_tune(mod['main'], params, target)
 
-            'measure_option': autotvm.measure_option(
-                builder=autotvm.LocalBuilder(timeout=10),
-                runner=autotvm.LocalRunner(number=10, repeat=1, min_repeat_ms=1000),
-                # runner=autotvm.RPCRunner(
-                #     '1080ti',  # change the device key to your key
-                #     '0.0.0.0', 9190,
-                #     number=20, repeat=3, timeout=4, min_repeat_ms=150)
-            ),
-        }
+    graph,lib,params = build_module(mod, params, target)
 
-        tune_and_evaluate(tuning_option, config, target, ctx, log_file)
+    save_compiled_module(graph, lib, params, "model")
+
+    mod = load_module("model",ctx,True)
+    evaluate(mod,input_shape,ctx)
