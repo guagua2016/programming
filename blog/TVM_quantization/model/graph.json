@@ -7,11 +7,11 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_16", 
+      "name": "fused_layout_transform_22", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_layout_transform_16", 
+        "func_name": "fused_layout_transform_22", 
         "flatten_data": "0"
       }, 
       "inputs": [
@@ -83,11 +83,11 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_17", 
+      "name": "fused_layout_transform_24", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_layout_transform_17", 
+        "func_name": "fused_layout_transform_24", 
         "flatten_data": "0"
       }, 
       "inputs": [
@@ -156,6 +156,23 @@
       ]
     }, 
     {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_23", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_23", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          12, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
       "op": "null", 
       "name": "p7", 
       "inputs": []
@@ -176,17 +193,17 @@
       }, 
       "inputs": [
         [
-          12, 
-          0, 
-          0
-        ], 
-        [
           13, 
           0, 
           0
         ], 
         [
           14, 
+          0, 
+          0
+        ], 
+        [
+          15, 
           0, 
           0
         ]
@@ -223,17 +240,17 @@
           0
         ], 
         [
-          15, 
-          0, 
-          0
-        ], 
-        [
           16, 
           0, 
           0
         ], 
         [
           17, 
+          0, 
+          0
+        ], 
+        [
+          18, 
           0, 
           0
         ]
@@ -250,7 +267,7 @@
       }, 
       "inputs": [
         [
-          18, 
+          19, 
           0, 
           0
         ]
@@ -263,16 +280,16 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_171", 
+      "name": "fused_layout_transform_241", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_layout_transform_17", 
+        "func_name": "fused_layout_transform_24", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          18, 
+          19, 
           0, 
           0
         ]
@@ -309,11 +326,6 @@
       }, 
       "inputs": [
         [
-          21, 
-          0, 
-          0
-        ], 
-        [
           22, 
           0, 
           0
@@ -330,6 +342,28 @@
         ], 
         [
           25, 
+          0, 
+          0
+        ], 
+        [
+          26, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_231", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_23", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          27, 
           0, 
           0
         ]
@@ -356,17 +390,17 @@
       }, 
       "inputs": [
         [
-          26, 
-          0, 
-          0
-        ], 
-        [
-          27, 
-          0, 
-          0
-        ], 
-        [
           28, 
+          0, 
+          0
+        ], 
+        [
+          29, 
+          0, 
+          0
+        ], 
+        [
+          30, 
           0, 
           0
         ]
@@ -384,36 +418,53 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip_layout_t_5007704947601589139_", 
+      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip_1", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "5", 
-        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip_layout_t_5007704947601589139_", 
+        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip_1", 
         "flatten_data": "0"
       }, 
       "inputs": [
-        [
-          19, 
-          0, 
-          0
-        ], 
         [
           20, 
           0, 
           0
         ], 
         [
-          29, 
-          0, 
-          0
-        ], 
-        [
-          30, 
+          21, 
           0, 
           0
         ], 
         [
           31, 
+          0, 
+          0
+        ], 
+        [
+          32, 
+          0, 
+          0
+        ], 
+        [
+          33, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_21", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_21", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          34, 
           0, 
           0
         ]
@@ -428,6 +479,23 @@
       "op": "null", 
       "name": "p21", 
       "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_26", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_26", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          34, 
+          0, 
+          0
+        ]
+      ]
     }, 
     {
       "op": "null", 
@@ -460,27 +528,44 @@
       }, 
       "inputs": [
         [
-          32, 
-          0, 
-          0
-        ], 
-        [
-          35, 
-          0, 
-          0
-        ], 
-        [
-          36, 
-          0, 
-          0
-        ], 
-        [
-          37, 
-          0, 
-          0
-        ], 
-        [
           38, 
+          0, 
+          0
+        ], 
+        [
+          39, 
+          0, 
+          0
+        ], 
+        [
+          40, 
+          0, 
+          0
+        ], 
+        [
+          41, 
+          0, 
+          0
+        ], 
+        [
+          42, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_25", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_25", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          43, 
           0, 
           0
         ]
@@ -517,73 +602,6 @@
       }, 
       "inputs": [
         [
-          39, 
-          0, 
-          0
-        ], 
-        [
-          40, 
-          0, 
-          0
-        ], 
-        [
-          41, 
-          0, 
-          0
-        ], 
-        [
-          42, 
-          0, 
-          0
-        ], 
-        [
-          43, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p30", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p31", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p32", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440__2", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "7", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440__2", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          32, 
-          0, 
-          0
-        ], 
-        [
-          33, 
-          0, 
-          0
-        ], 
-        [
-          34, 
-          0, 
-          0
-        ], 
-        [
           44, 
           0, 
           0
@@ -602,6 +620,90 @@
           47, 
           0, 
           0
+        ], 
+        [
+          48, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p30", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_left_shift_layout_transform", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_cast_left_shift_layout_transform", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          49, 
+          0, 
+          0
+        ], 
+        [
+          50, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p31", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p32", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip_1", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "6", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip_1", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          35, 
+          0, 
+          0
+        ], 
+        [
+          36, 
+          0, 
+          0
+        ], 
+        [
+          37, 
+          0, 
+          0
+        ], 
+        [
+          51, 
+          0, 
+          0
+        ], 
+        [
+          52, 
+          0, 
+          0
+        ], 
+        [
+          53, 
+          0, 
+          0
         ]
       ]
     }, 
@@ -616,7 +718,7 @@
       }, 
       "inputs": [
         [
-          48, 
+          54, 
           0, 
           0
         ]
@@ -626,6 +728,23 @@
       "op": "null", 
       "name": "p33", 
       "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_27", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_27", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          54, 
+          0, 
+          0
+        ]
+      ]
     }, 
     {
       "op": "null", 
@@ -658,27 +777,44 @@
       }, 
       "inputs": [
         [
-          48, 
+          57, 
           0, 
           0
         ], 
         [
-          51, 
+          58, 
           0, 
           0
         ], 
         [
-          52, 
+          59, 
           0, 
           0
         ], 
         [
-          53, 
+          60, 
           0, 
           0
         ], 
         [
-          54, 
+          61, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_251", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_25", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          62, 
           0, 
           0
         ]
@@ -695,6 +831,33 @@
       "inputs": []
     }, 
     {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_1", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "3", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_1", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          63, 
+          0, 
+          0
+        ], 
+        [
+          64, 
+          0, 
+          0
+        ], 
+        [
+          65, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
       "op": "null", 
       "name": "p40", 
       "inputs": []
@@ -706,24 +869,14 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_cast_left_shift_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_cl_9793482764995001945__1", 
+      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "7", 
-        "func_name": "fused_cast_left_shift_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_cl_9793482764995001945__1", 
+        "num_inputs": "5", 
+        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip", 
         "flatten_data": "0"
       }, 
       "inputs": [
-        [
-          49, 
-          0, 
-          0
-        ], 
-        [
-          50, 
-          0, 
-          0
-        ], 
         [
           55, 
           0, 
@@ -735,17 +888,34 @@
           0
         ], 
         [
-          57, 
+          66, 
           0, 
           0
         ], 
         [
-          58, 
+          67, 
           0, 
           0
         ], 
         [
-          59, 
+          68, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_20", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_20", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          69, 
           0, 
           0
         ]
@@ -792,27 +962,44 @@
       }, 
       "inputs": [
         [
-          60, 
+          69, 
           0, 
           0
         ], 
         [
-          63, 
+          73, 
           0, 
           0
         ], 
         [
-          64, 
+          74, 
           0, 
           0
         ], 
         [
-          65, 
+          75, 
           0, 
           0
         ], 
         [
-          66, 
+          76, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_28", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_28", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          77, 
           0, 
           0
         ]
@@ -849,27 +1036,27 @@
       }, 
       "inputs": [
         [
-          67, 
+          78, 
           0, 
           0
         ], 
         [
-          68, 
+          79, 
           0, 
           0
         ], 
         [
-          69, 
+          80, 
           0, 
           0
         ], 
         [
-          70, 
+          81, 
           0, 
           0
         ], 
         [
-          71, 
+          82, 
           0, 
           0
         ]
@@ -892,26 +1079,21 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440__1", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440_", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "7", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440__1", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440_", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          60, 
+          70, 
           0, 
           0
         ], 
         [
-          61, 
-          0, 
-          0
-        ], 
-        [
-          62, 
+          71, 
           0, 
           0
         ], 
@@ -921,17 +1103,22 @@
           0
         ], 
         [
-          73, 
+          83, 
           0, 
           0
         ], 
         [
-          74, 
+          84, 
           0, 
           0
         ], 
         [
-          75, 
+          85, 
+          0, 
+          0
+        ], 
+        [
+          86, 
           0, 
           0
         ]
@@ -948,7 +1135,7 @@
       }, 
       "inputs": [
         [
-          76, 
+          87, 
           0, 
           0
         ]
@@ -958,6 +1145,23 @@
       "op": "null", 
       "name": "p55", 
       "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_281", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_28", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          87, 
+          0, 
+          0
+        ]
+      ]
     }, 
     {
       "op": "null", 
@@ -990,27 +1194,44 @@
       }, 
       "inputs": [
         [
-          76, 
+          90, 
           0, 
           0
         ], 
         [
-          79, 
+          91, 
           0, 
           0
         ], 
         [
-          80, 
+          92, 
           0, 
           0
         ], 
         [
-          81, 
+          93, 
           0, 
           0
         ], 
         [
-          82, 
+          94, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_282", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_28", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          95, 
           0, 
           0
         ]
@@ -1047,37 +1268,54 @@
       }, 
       "inputs": [
         [
-          77, 
+          88, 
           0, 
           0
         ], 
         [
-          78, 
+          89, 
           0, 
           0
         ], 
         [
-          83, 
+          96, 
           0, 
           0
         ], 
         [
-          84, 
+          97, 
           0, 
           0
         ], 
         [
-          85, 
+          98, 
           0, 
           0
         ], 
         [
-          86, 
+          99, 
           0, 
           0
         ], 
         [
-          87, 
+          100, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_19", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_19", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          101, 
           0, 
           0
         ]
@@ -1092,6 +1330,23 @@
       "op": "null", 
       "name": "p65", 
       "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_30", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_30", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          101, 
+          0, 
+          0
+        ]
+      ]
     }, 
     {
       "op": "null", 
@@ -1124,27 +1379,44 @@
       }, 
       "inputs": [
         [
-          88, 
+          105, 
           0, 
           0
         ], 
         [
-          91, 
+          106, 
           0, 
           0
         ], 
         [
-          92, 
+          107, 
           0, 
           0
         ], 
         [
-          93, 
+          108, 
           0, 
           0
         ], 
         [
-          94, 
+          109, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_29", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_29", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          110, 
           0, 
           0
         ]
@@ -1181,27 +1453,27 @@
       }, 
       "inputs": [
         [
-          95, 
+          111, 
           0, 
           0
         ], 
         [
-          96, 
+          112, 
           0, 
           0
         ], 
         [
-          97, 
+          113, 
           0, 
           0
         ], 
         [
-          98, 
+          114, 
           0, 
           0
         ], 
         [
-          99, 
+          115, 
           0, 
           0
         ]
@@ -1211,6 +1483,28 @@
       "op": "null", 
       "name": "p74", 
       "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_left_shift_layout_transform_1", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_cast_left_shift_layout_transform_1", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          116, 
+          0, 
+          0
+        ], 
+        [
+          117, 
+          0, 
+          0
+        ]
+      ]
     }, 
     {
       "op": "null", 
@@ -1224,39 +1518,14 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440_", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "7", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440_", 
+        "num_inputs": "6", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip", 
         "flatten_data": "0"
       }, 
       "inputs": [
-        [
-          88, 
-          0, 
-          0
-        ], 
-        [
-          89, 
-          0, 
-          0
-        ], 
-        [
-          90, 
-          0, 
-          0
-        ], 
-        [
-          100, 
-          0, 
-          0
-        ], 
-        [
-          101, 
-          0, 
-          0
-        ], 
         [
           102, 
           0, 
@@ -1264,6 +1533,26 @@
         ], 
         [
           103, 
+          0, 
+          0
+        ], 
+        [
+          104, 
+          0, 
+          0
+        ], 
+        [
+          118, 
+          0, 
+          0
+        ], 
+        [
+          119, 
+          0, 
+          0
+        ], 
+        [
+          120, 
           0, 
           0
         ]
@@ -1280,7 +1569,7 @@
       }, 
       "inputs": [
         [
-          104, 
+          121, 
           0, 
           0
         ]
@@ -1290,6 +1579,23 @@
       "op": "null", 
       "name": "p77", 
       "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_32", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_32", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          121, 
+          0, 
+          0
+        ]
+      ]
     }, 
     {
       "op": "null", 
@@ -1322,27 +1628,44 @@
       }, 
       "inputs": [
         [
-          104, 
+          124, 
           0, 
           0
         ], 
         [
-          107, 
+          125, 
           0, 
           0
         ], 
         [
-          108, 
+          126, 
           0, 
           0
         ], 
         [
-          109, 
+          127, 
           0, 
           0
         ], 
         [
-          110, 
+          128, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_layout_transform_31", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_layout_transform_31", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          129, 
           0, 
           0
         ]
@@ -1360,36 +1683,53 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_cast_left_shift_nn_contrib_conv2d_NCHWc_add_add_nn_relu_cast_multiply", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_2", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_cast_left_shift_nn_contrib_conv2d_NCHWc_add_add_nn_relu_cast_multiply", 
+        "num_inputs": "3", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_2", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          105, 
+          130, 
           0, 
           0
         ], 
         [
-          106, 
+          131, 
           0, 
           0
         ], 
         [
-          111, 
+          132, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_cast_multiply", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "3", 
+        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_cast_multiply", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          122, 
           0, 
           0
         ], 
         [
-          112, 
+          123, 
           0, 
           0
         ], 
         [
-          113, 
+          133, 
           0, 
           0
         ]
@@ -1406,7 +1746,7 @@
       }, 
       "inputs": [
         [
-          114, 
+          134, 
           0, 
           0
         ]
@@ -1423,7 +1763,7 @@
       }, 
       "inputs": [
         [
-          115, 
+          135, 
           0, 
           0
         ]
@@ -1450,17 +1790,17 @@
       }, 
       "inputs": [
         [
-          116, 
+          136, 
           0, 
           0
         ], 
         [
-          117, 
+          137, 
           0, 
           0
         ], 
         [
-          118, 
+          138, 
           0, 
           0
         ]
@@ -1476,55 +1816,47 @@
     9, 
     10, 
     11, 
-    13, 
     14, 
-    16, 
+    15, 
     17, 
-    20, 
-    22, 
+    18, 
+    21, 
     23, 
     24, 
     25, 
-    27, 
-    28, 
+    26, 
+    29, 
     30, 
-    31, 
+    32, 
     33, 
-    34, 
-    35, 
     36, 
     37, 
-    38, 
+    39, 
     40, 
     41, 
     42, 
-    43, 
     45, 
     46, 
     47, 
+    48, 
     50, 
-    51, 
     52, 
     53, 
-    54, 
     56, 
-    57, 
     58, 
     59, 
+    60, 
     61, 
-    62, 
-    63, 
     64, 
     65, 
-    66, 
+    67, 
     68, 
-    69, 
-    70, 
     71, 
+    72, 
     73, 
     74, 
     75, 
-    78, 
+    76, 
     79, 
     80, 
     81, 
@@ -1532,33 +1864,41 @@
     84, 
     85, 
     86, 
-    87, 
     89, 
-    90, 
     91, 
     92, 
     93, 
     94, 
-    96, 
     97, 
     98, 
     99, 
-    101, 
-    102, 
+    100, 
     103, 
+    104, 
     106, 
     107, 
     108, 
     109, 
-    110, 
     112, 
     113, 
+    114, 
+    115, 
     117, 
-    118
+    119, 
+    120, 
+    123, 
+    125, 
+    126, 
+    127, 
+    128, 
+    131, 
+    132, 
+    137, 
+    138
   ], 
   "heads": [
     [
-      119, 
+      139, 
       0, 
       0
     ]
@@ -1681,6 +2021,26 @@
         "int8", 
         "int8", 
         "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
         "float32", 
         "float32", 
         "float32", 
@@ -1694,120 +2054,140 @@
       [
         [1, 3, 224, 224], 
         [1, 1, 224, 224, 3], 
-        [2, 1, 7, 7, 3, 32], 
+        [8, 1, 7, 7, 3, 8], 
+        [1, 8, 1, 1, 8], 
+        [1, 8, 112, 112, 8], 
+        [1, 8, 56, 56, 8], 
+        [], 
+        [1, 16, 56, 56, 4], 
+        [2, 16, 3, 3, 4, 32], 
         [1, 2, 1, 1, 32], 
-        [1, 2, 112, 112, 32], 
-        [1, 2, 56, 56, 32], 
-        [], 
-        [1, 8, 56, 56, 8], 
-        [8, 8, 3, 3, 8, 8], 
-        [1, 8, 1, 1, 8], 
-        [], 
-        [], 
-        [1, 8, 56, 56, 8], 
-        [8, 8, 3, 3, 8, 8], 
-        [1, 8, 1, 1, 8], 
-        [1, 8, 56, 56, 8], 
         [], 
         [], 
         [1, 2, 56, 56, 32], 
+        [1, 16, 56, 56, 4], 
+        [2, 16, 3, 3, 4, 32], 
+        [1, 2, 1, 1, 32], 
         [1, 2, 56, 56, 32], 
         [], 
-        [1, 8, 56, 56, 8], 
-        [8, 8, 3, 3, 8, 8], 
-        [1, 8, 1, 1, 8], 
-        [], 
         [], 
         [1, 8, 56, 56, 8], 
-        [8, 8, 3, 3, 8, 8], 
-        [1, 8, 1, 1, 8], 
         [1, 8, 56, 56, 8], 
         [], 
+        [1, 16, 56, 56, 4], 
+        [2, 16, 3, 3, 4, 32], 
+        [1, 2, 1, 1, 32], 
+        [], 
+        [], 
+        [1, 2, 56, 56, 32], 
+        [1, 16, 56, 56, 4], 
+        [2, 16, 3, 3, 4, 32], 
+        [1, 2, 1, 1, 32], 
+        [1, 2, 56, 56, 32], 
+        [], 
         [], 
         [1, 8, 56, 56, 8], 
-        [16, 8, 1, 1, 8, 8], 
-        [1, 16, 1, 1, 8], 
-        [16, 8, 3, 3, 8, 8], 
-        [1, 16, 1, 1, 8], 
+        [1, 32, 56, 56, 2], 
+        [4, 32, 1, 1, 2, 32], 
+        [1, 4, 1, 1, 32], 
+        [1, 2, 56, 56, 32], 
+        [2, 2, 3, 3, 32, 64], 
+        [1, 2, 1, 1, 64], 
         [], 
         [], 
-        [1, 16, 28, 28, 8], 
-        [16, 16, 3, 3, 8, 8], 
-        [1, 16, 1, 1, 8], 
+        [1, 2, 28, 28, 64], 
+        [1, 128, 28, 28, 1], 
+        [2, 128, 3, 3, 1, 64], 
+        [1, 2, 1, 1, 64], 
         [], 
         [], 
-        [1, 16, 28, 28, 8], 
+        [1, 2, 28, 28, 64], 
+        [], 
+        [1, 4, 28, 28, 32], 
         [], 
         [], 
+        [1, 4, 28, 28, 32], 
+        [1, 4, 28, 28, 32], 
         [], 
-        [1, 16, 28, 28, 8], 
-        [1, 16, 28, 28, 8], 
-        [], 
-        [16, 16, 3, 3, 8, 8], 
-        [1, 16, 1, 1, 8], 
-        [], 
-        [], 
-        [1, 16, 28, 28, 8], 
-        [16, 16, 3, 3, 8, 8], 
-        [1, 16, 1, 1, 8], 
+        [1, 128, 28, 28, 1], 
+        [2, 128, 3, 3, 1, 64], 
+        [1, 2, 1, 1, 64], 
         [], 
         [], 
-        [1, 16, 28, 28, 8], 
-        [32, 16, 1, 1, 8, 8], 
-        [1, 32, 1, 1, 8], 
-        [32, 16, 3, 3, 8, 8], 
-        [1, 32, 1, 1, 8], 
+        [1, 2, 28, 28, 64], 
+        [1, 128, 28, 28, 1], 
+        [2, 128, 3, 3, 1, 64], 
+        [1, 2, 1, 1, 64], 
+        [1, 2, 28, 28, 64], 
         [], 
         [], 
-        [1, 32, 14, 14, 8], 
-        [32, 32, 3, 3, 8, 8], 
-        [1, 32, 1, 1, 8], 
+        [1, 4, 28, 28, 32], 
+        [1, 64, 28, 28, 2], 
+        [4, 64, 1, 1, 2, 64], 
+        [1, 4, 1, 1, 64], 
+        [4, 4, 3, 3, 32, 64], 
+        [1, 4, 1, 1, 64], 
         [], 
         [], 
-        [1, 32, 14, 14, 8], 
+        [1, 4, 14, 14, 64], 
+        [1, 256, 14, 14, 1], 
+        [4, 256, 3, 3, 1, 64], 
+        [1, 4, 1, 1, 64], 
         [], 
         [], 
-        [], 
-        [1, 32, 14, 14, 8], 
-        [1, 32, 14, 14, 8], 
-        [], 
-        [32, 32, 3, 3, 8, 8], 
-        [1, 32, 1, 1, 8], 
-        [], 
-        [], 
-        [1, 32, 14, 14, 8], 
-        [32, 32, 3, 3, 8, 8], 
-        [1, 32, 1, 1, 8], 
-        [], 
-        [], 
-        [1, 32, 14, 14, 8], 
-        [64, 32, 1, 1, 8, 8], 
-        [1, 64, 1, 1, 8], 
-        [64, 32, 3, 3, 8, 8], 
-        [1, 64, 1, 1, 8], 
-        [], 
-        [], 
-        [1, 64, 7, 7, 8], 
-        [64, 64, 3, 3, 8, 8], 
-        [1, 64, 1, 1, 8], 
-        [], 
-        [], 
-        [1, 64, 7, 7, 8], 
+        [1, 4, 14, 14, 64], 
         [], 
         [], 
         [], 
-        [1, 64, 7, 7, 8], 
-        [1, 64, 7, 7, 8], 
+        [1, 4, 14, 14, 64], 
+        [1, 4, 14, 14, 64], 
         [], 
-        [64, 64, 3, 3, 8, 8], 
-        [1, 64, 1, 1, 8], 
+        [1, 256, 14, 14, 1], 
+        [4, 256, 3, 3, 1, 64], 
+        [1, 4, 1, 1, 64], 
         [], 
         [], 
-        [1, 64, 7, 7, 8], 
-        [64, 64, 3, 3, 8, 8], 
-        [1, 64, 1, 1, 8], 
-        [1, 64, 7, 7, 8], 
-        [1, 64, 1, 1, 8], 
+        [1, 4, 14, 14, 64], 
+        [1, 256, 14, 14, 1], 
+        [4, 256, 3, 3, 1, 64], 
+        [1, 4, 1, 1, 64], 
+        [], 
+        [], 
+        [1, 4, 14, 14, 64], 
+        [1, 128, 14, 14, 2], 
+        [16, 128, 1, 1, 2, 32], 
+        [1, 16, 1, 1, 32], 
+        [1, 16, 14, 14, 16], 
+        [2, 16, 3, 3, 16, 256], 
+        [1, 2, 1, 1, 256], 
+        [], 
+        [], 
+        [1, 2, 7, 7, 256], 
+        [1, 1, 7, 7, 512], 
+        [8, 1, 3, 3, 512, 64], 
+        [1, 8, 1, 1, 64], 
+        [], 
+        [], 
+        [1, 8, 7, 7, 64], 
+        [], 
+        [1, 16, 7, 7, 32], 
+        [], 
+        [], 
+        [1, 16, 7, 7, 32], 
+        [1, 16, 7, 7, 32], 
+        [], 
+        [1, 1, 7, 7, 512], 
+        [8, 1, 3, 3, 512, 64], 
+        [1, 8, 1, 1, 64], 
+        [], 
+        [], 
+        [1, 8, 7, 7, 64], 
+        [1, 1, 7, 7, 512], 
+        [8, 1, 3, 3, 512, 64], 
+        [1, 8, 1, 1, 64], 
+        [1, 8, 7, 7, 64], 
+        [1, 16, 7, 7, 32], 
+        [1, 16, 1, 1, 32], 
         [1, 512], 
         [1000, 512], 
         [1000], 
@@ -1830,28 +2210,32 @@
         8, 
         9, 
         10, 
+        4, 
         11, 
         12, 
-        4, 
+        10, 
         13, 
         14, 
-        10, 
-        1, 
-        15, 
         4, 
+        10, 
+        15, 
+        1, 
         16, 
         17, 
         18, 
         19, 
-        10, 
+        4, 
+        1, 
         20, 
         21, 
         4, 
         22, 
         23, 
+        1, 
         10, 
         24, 
         25, 
+        4, 
         26, 
         27, 
         28, 
@@ -1862,52 +2246,63 @@
         32, 
         33, 
         34, 
+        1, 
         35, 
+        30, 
         36, 
         37, 
         1, 
-        34, 
+        30, 
         38, 
+        10, 
         39, 
         40, 
         41, 
         42, 
+        1, 
         10, 
         43, 
         44, 
+        1, 
         45, 
         46, 
-        1, 
+        10, 
+        30, 
         47, 
         48, 
         49, 
         50, 
         51, 
         52, 
-        34, 
+        1, 
+        10, 
         53, 
         54, 
         55, 
         56, 
-        10, 
+        1, 
         57, 
         58, 
         59, 
-        34, 
         10, 
+        30, 
         60, 
+        1, 
         61, 
         62, 
         63, 
         64, 
+        10, 
         1, 
         65, 
         66, 
         67, 
         68, 
-        34, 
+        10, 
+        30, 
         69, 
         70, 
+        1, 
         71, 
         72, 
         73, 
@@ -1918,25 +2313,30 @@
         77, 
         78, 
         79, 
+        10, 
         80, 
+        75, 
         81, 
         82, 
         10, 
-        79, 
+        75, 
         83, 
+        30, 
         84, 
         85, 
         86, 
         87, 
-        34, 
+        10, 
+        30, 
         88, 
         89, 
         10, 
-        79, 
+        30, 
+        75, 
         90, 
         91, 
         92, 
-        79
+        75
       ]
     ]
   }, 
@@ -2061,6 +2461,26 @@
     117, 
     118, 
     119, 
-    120
+    120, 
+    121, 
+    122, 
+    123, 
+    124, 
+    125, 
+    126, 
+    127, 
+    128, 
+    129, 
+    130, 
+    131, 
+    132, 
+    133, 
+    134, 
+    135, 
+    136, 
+    137, 
+    138, 
+    139, 
+    140
   ]
 }

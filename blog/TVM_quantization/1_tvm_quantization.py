@@ -314,17 +314,17 @@ if __name__ == '__main__':
                     dtype_activation='int8',
                     debug_enabled_ops=None)
 
-    mod['main'] = qtz.prerequisite_optimize(mod['main'],params=params)
-    logging.info(mod['main'].astext(show_meta_data=False))
+    # mod['main'] = qtz.prerequisite_optimize(mod['main'],params=params)
+    # logging.info(mod['main'].astext(show_meta_data=False))
 
-    import os
-    os._exit(-1)
+    # import os
+    # os._exit(-1)
 
     mod = quantize_relay_module(mod,params,qconfig)
 
     # autotvm_tune(mod['main'], params, target)
 
-    graph,lib,params = build_module(mod, params, target)
+    graph,lib,params = build_module(mod, params, target, "tuning.log")
 
     save_compiled_module(graph, lib, params, "model")
 
