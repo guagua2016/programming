@@ -108,60 +108,6 @@ with tf.gfile.FastGFile(model_path, 'rb') as f:
     with tf.Session() as sess:
         graph_def = tf_testing.AddShapesToGraphDef(sess, 'softmax')
 
-###################################################################
-# Begin Tuning
-# ------------
-# Now we can extract tuning tasks from the network and begin tuning.
-# Here, we provide a simple utility function to tune a list of tasks.
-# This function is just an initial implementation which tunes them in sequential order.
-# We will introduce a more sophisticated tuning scheduler in the future.
-
-# You can skip the implementation of this function for this tutorial.
-def tune_tasks(tasks,
-               measure_option,
-               tuner='xgb',
-               n_trial=1000,
-               early_stopping=None,
-               log_filename='tuning.log',
-               use_transfer_learning=True):
-               
-    # create tmp log file
-    tmp_log_file = log_filename + ".tmp"
-    if os.path.exists(tmp_log_file):
-        os.remove(tmp_log_file)
-
-    for i, tsk in enumerate(reversed(tasks)):
-        prefix = "[Task %2d/%2d] " %(i+1, len(tasks))
-
-        # create tuner
-        if tuner == 'xgb' or tuner == 'xgb-rank':
-            tuner_obj = XGBTuner(tsk, loss_type='rank')
-        elif tuner == 'ga':
-            tuner_obj = GATuner(tsk, pop_size=100)
-        elif tuner == 'random':
-            tuner_obj = RandomTuner(tsk)
-        elif tuner == 'gridsearch':
-            tuner_obj = GridSearchTuner(tsk)
-        else:
-            raise ValueError("Invalid tuner: " + tuner)
-
-        if use_transfer_learning:
-            if os.path.isfile(tmp_log_file):
-                tuner_obj.load_history(autotvm.record.load_from_file(tmp_log_file))
-
-        # do tuning
-        tuner_obj.tune(n_trial=min(n_trial, len(tsk.config_space)),
-                       early_stopping=early_stopping,
-                       measure_option=measure_option,
-                       callbacks=[
-                           autotvm.callback.progress_bar(n_trial, prefix=prefix),
-                           autotvm.callback.log_to_file(tmp_log_file)])
-
-    # pick best records to a cache file
-    autotvm.record.pick_best(tmp_log_file, log_filename)
-    os.remove(tmp_log_file)
-
-
 
 ######################################################################
 # Decode image
@@ -188,46 +134,10 @@ x = np.array(image)
 #   params: params converted from tensorflow params (tensor protobuf).
 shape_dict = {'DecodeJpeg/contents': x.shape}
 dtype_dict = {'DecodeJpeg/contents': 'uint8'}
+print("=============",layout,shape_dict)
 mod, params = relay.frontend.from_tensorflow(graph_def,
                                              layout=layout,
                                              shape=shape_dict)
-print("==========",type(mod))
-print("==========",type(mod['main']))
-print("==========",mod['main'].astext(show_meta_data=False))
-net = mod['main']
-with relay.build_config(opt_level=3):
-    qfunc = relay.quantize.prerequisite_optimize(net, params=params)
-
-print("=======",qfunc.astext(show_meta_data=False))
-
-# os._exit(-1)
-tasks = autotvm.task.extract_from_program(qfunc, target=target,
-                                            params=params, ops=(relay.op.nn.conv2d,))
-for i in range(len(tasks)):
-    op_name = tasks[i].workload[0]
-    if op_name == 'conv2d':
-        func_create = 'topi_x86_conv2d_NCHWc'
-    elif op_name == 'depthwise_conv2d_nchw':
-        func_create = 'topi_x86_depthwise_conv2d_NCHWc_from_nchw'
-    else:
-        print ("Tuning {} is not supported on x86")
-        raise ValueError("Tuning {} is not supported on x86".format(op_name))
-
-    print ( "[Create Task %2d/%2d (%s, %s) ] " % (i+1, len(tasks), tasks[i].name, tasks[i].workload[0]))
-
-    tsk = autotvm.task.create(func_create, args=tasks[i].args,
-                                target=tasks[i].target, template_key='direct')
-    print("================",type(tsk),tsk)
-    tsk.workload = tasks[i].workload
-    tasks[i] = tsk
-
-# run tuning tasks
-# logging.info("Tuning...",type(tasks))
-# os._exit(-1)
-
-tune_tasks(tasks, **tuning_opt)
-
-
 
 print("Tensorflow protobuf imported to relay frontend.")
 ######################################################################
@@ -324,6 +234,8 @@ def run_inference_on_image(image):
         predictions = sess.run(softmax_tensor,
                                {'DecodeJpeg/contents:0': image_data})
         print("==================", time.time()-start)
+        print ("===== TENSORFLOW RESULTS =======")
+
         predictions = np.squeeze(predictions)
 
         # Creates node ID --> English string lookup.
