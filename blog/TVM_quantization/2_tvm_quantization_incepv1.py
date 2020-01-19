@@ -33,11 +33,9 @@ from tvm.contrib.debugger import debug_runtime as graph_runtime
 
 # Tensorflow imports
 import tensorflow as tf
-
 # Tensorflow utility functions
 import tvm.relay.testing.tf as tf_testing
 
-import tensorflow as tf
 try:
     tf_compat_v1 = tf.compat.v1
 except ImportError:
@@ -50,34 +48,6 @@ Config = namedtuple('Config', ['model', 'nbit_input',  'dtype_input', 'nbit_outp
 # physical CPU cores on your machine.
 # num_threads = 2
 # os.environ["TVM_NUM_THREADS"] = str(num_threads)
-
-def get_mxnet_model(model_name, batch_size):
-    """Get mxnet model.
-
-    Parameters
-    ----------
-    model_name : str
-    batch_size : num
-
-    Returns
-    -------
-    mod : tvm.relay.Module
-    params : dict of str to tvm.NDArray
-    input_shape : tuple
-
-    """
-
-    gluon_model = gluon.model_zoo.vision.get_model(model_name, pretrained=True)
-    
-    
-    img_size = 299 if model_name == 'inceptionv3' else 224
-    input_shape = (batch_size, 3, img_size, img_size)
-    mod, params = relay.frontend.from_mxnet(gluon_model, {"data": input_shape})
-
-    return mod,params,input_shape
-
-
-
 
 def get_tf_model_InceptionV1(model_path):
 
@@ -283,6 +253,7 @@ def evaluate(mod,input_shape,ctx):
     dtype_dict = {'DecodeJpeg/contents': 'uint8'}
     dtype = 'uint8'
     mod.set_input('DecodeJpeg/contents', tvm.nd.array(x.astype(dtype)))
+    
 
     # evaluate
     logging.info("Evaluate inference time cost...")
@@ -317,8 +288,9 @@ if __name__ == '__main__':
 
     mod = quantize_relay_module(mod,params,qconfig)
 
-    autotvm_tune(mod['main'], params, target)
+    # autotvm_tune(mod['main'], params, target)
 
+    # graph,lib,params = build_module(mod, params, target,'tuning_inceptv1.log')
     graph,lib,params = build_module(mod, params, target)
 
     save_compiled_module(graph, lib, params, "model_inception")

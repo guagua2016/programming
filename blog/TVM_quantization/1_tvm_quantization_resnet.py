@@ -68,39 +68,20 @@ def get_mxnet_model(model_name, batch_size):
     """
 
     gluon_model = gluon.model_zoo.vision.get_model(model_name, pretrained=True)
-    
+
+    img_path='/home/terse/code/programming/blog/TVM_quantization/tf/elephant-299.jpg'
+    from PIL import Image
+    image = Image.open(img_path).resize((299, 299))
+    x = np.array(image).reshape(1,3,299,299)
+    start_time = time.time()
+    y = gluon_model(mx.ndarray.array(x))
+    print("=======", (time.time()-start_time)*1000)
     
     img_size = 299 if model_name == 'inceptionv3' else 224
     input_shape = (batch_size, 3, img_size, img_size)
     mod, params = relay.frontend.from_mxnet(gluon_model, {"data": input_shape})
 
     return mod,params,input_shape
-
-
-
-
-def get_tf_model_InceptionV1(model_path):
-
-    with tf_compat_v1.gfile.GFile(model_path, 'rb') as f:
-        graph_def = tf_compat_v1.GraphDef()
-        graph_def.ParseFromString(f.read())
-        graph = tf.import_graph_def(graph_def, name='')
-        # Call the utility to import the graph definition into default graph.
-        graph_def = tf_testing.ProcessGraphDefParam(graph_def)
-        # Add shapes to the graph.
-        with tf_compat_v1.Session() as sess:
-            graph_def = tf_testing.AddShapesToGraphDef(sess, 'softmax')
-
-    x = (299,299)
-    layout = None
-    shape_dict = {'DecodeJpeg/contents': x}
-    dtype_dict = {'DecodeJpeg/contents': 'uint8'}
-    mod, params = relay.frontend.from_tensorflow(graph_def,
-                                                 layout=layout,
-                                                 shape=shape_dict)
-
-    return mod,params,shape_dict
-
 
 
 def quantize_relay_module(mod, params, qconfig=None):
@@ -274,13 +255,6 @@ def load_module(dir_path,ctx=None,debug=False):
 def evaluate(mod,input_shape,ctx):
 
     data_tvm = tvm.nd.array((np.random.uniform(size=input_shape)).astype('float32'))
-
-    start = time.clock()
-    for i in range(10):
-        mod.run(data=data_tvm)
-    print("inference time: ",(time.clock() - start)/10)
-
-
     mod.set_input('data', data_tvm)
     # mod.set_input(**params)
     # evaluate
@@ -289,9 +263,6 @@ def evaluate(mod,input_shape,ctx):
     prof_res = np.array(ftimer().results) * 1000  # convert to millisecond
     logging.info("Mean inference time (std dev): %.2f ms (%.2f ms)" % (np.mean(prof_res), np.std(prof_res)))
 
-
-    # out = mod.get_output(0).asnumpy()
-    ## Todo
 
 
 if __name__ == '__main__':
@@ -316,14 +287,11 @@ if __name__ == '__main__':
     # mod['main'] = qtz.prerequisite_optimize(mod['main'],params=params)
     # logging.info(mod['main'].astext(show_meta_data=False))
 
-    # import os
-    # os._exit(-1)
-
     mod = quantize_relay_module(mod,params,qconfig)
 
     # autotvm_tune(mod['main'], params, target)
 
-    graph,lib,params = build_module(mod, params, target, "tuning.log")
+    graph,lib,params = build_module(mod, params, target,'tuning_resnet18v1.log')
 
     save_compiled_module(graph, lib, params, "model")
 
