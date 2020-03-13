@@ -65,23 +65,16 @@ act = conv_block(data, "graph", 32, strides=(2, 2))
 func = relay.Function(relay.analysis.free_vars(act),act)
 
 
+
+
 # print(type(func))
 # # mod = relay.Module.from_expr(expr)
 # net = relay.Module.from_expr(func)
 
-target = "llvm"
-ctx = tvm.context(target, 0)
+
 m = relay.Module()
 m['main'] = func
-net = relay.transform.InferType()(m)
-
-print(net)
-# net = m
-import os
-# os._exit(-1)
-
-# net = relay.ir_pass.infer_type(func)
-# net = run_infer_type(func)
+net = relay.transform.InferType()(m)   # InferType ???
 
 
 def create_workload(net, initializer=None, seed=0):
@@ -122,21 +115,15 @@ def create_workload(net, initializer=None, seed=0):
         params[k] = tvm.nd.array(init_value, ctx=tvm.cpu(0))
     return mod, params
 
-
-print(dir(net))
-
+# get module and params
 mod,params = create_workload(m['main'])
 
 
+target = "llvm"
+ctx = tvm.context(target, 0)
 
-# shape_dict = {
-#   v.name_hint : v.checked_type for v in net.params}
-# params = {}
-# for k, v in shape_dict.items():
-#   if k == "data":
-#       continue
-#   init_value = np.random.uniform(-1, 1, v.concrete_shape).astype(v.dtype)
-#   params[k] = tvm.nd.array(init_value, ctx=ctx)
+
+# https://github.com/apache/incubator-tvm/blob/v0.6/src/relay/backend/build_module.cc
 
 with relay.build_config(opt_level=3):
   graph, lib, params = relay.build(mod, target, params=params)
