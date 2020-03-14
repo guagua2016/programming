@@ -1,13 +1,9 @@
-
-from tvm import relay
 import tvm
 from tvm.relay import transform
 import tvm.relay as relay
 import numpy as np
-# import runtime 
-# from .init import create_workload
-
 from tvm.contrib import graph_runtime
+
 
 def batch_norm_infer(data,
                      gamma=None,
@@ -32,7 +28,6 @@ def batch_norm_infer(data,
                                moving_var=moving_var,
                                **kwargs)[0]
 
-
 def conv2d(data, weight=None, **kwargs):
     name = kwargs.get("name")
     kwargs.pop("name")
@@ -56,7 +51,6 @@ def conv_block(data, name, channels, kernel_size=(3, 3), strides=(1, 1),
     return act
 
 
-
 data_shape = (1, 3, 224, 224)
 kernel_shape = (32, 3, 3, 3)
 dtype = "float32"
@@ -65,76 +59,32 @@ act = conv_block(data, "graph", 32, strides=(2, 2))
 func = relay.Function(relay.analysis.free_vars(act),act)
 
 
-
-
-# print(type(func))
-# # mod = relay.Module.from_expr(expr)
-# net = relay.Module.from_expr(func)
-
-
-m = relay.Module()
-m['main'] = func
-net = relay.transform.InferType()(m)   # InferType ???
-
-
-def create_workload(net, initializer=None, seed=0):
-    """Helper function to create benchmark image classification workload.
-
-    Parameters
-    ----------
-    net : tvm.relay.Function
-        The selected function of the network.
-
-    initializer : Initializer
-        The initializer used
-
-    seed : int
-        The seed used in initialization.
-
-    Returns
-    -------
-    mod : tvm.relay.Module
-        The created relay module.
-
-    params : dict of str to NDArray
-        The parameters.
-    """
-    mod = relay.Module.from_expr(net)
-    mod = relay.transform.InferType()(mod)
-    shape_dict = {
-        v.name_hint : v.checked_type for v in mod["main"].params}
-    np.random.seed(seed)
-    # initializer = initializer if initializer else Xavier()
-    params = {}
-    for k, v in shape_dict.items():
-        if k == "data":
-            continue
-        init_value = np.random.uniform(-1, 1, v.concrete_shape).astype(v.dtype)
-        # init_value = np.zeros(v.concrete_shape).astype(v.dtype)
-        # initializer(k, init_value)
-        params[k] = tvm.nd.array(init_value, ctx=tvm.cpu(0))
-    return mod, params
-
-# get module and params
-mod,params = create_workload(m['main'])
-
+mod = relay.Module.from_expr(func)
+mod = relay.transform.InferType()(mod)
+shape_dict = {
+    v.name_hint : v.checked_type for v in mod["main"].params}
+np.random.seed(0)
+params = {}
+for k, v in shape_dict.items():
+    if k == "data":
+        continue
+    init_value = np.random.uniform(-1, 1, v.concrete_shape).astype(v.dtype)
+    params[k] = tvm.nd.array(init_value, ctx=tvm.cpu(0))
 
 target = "llvm"
 ctx = tvm.context(target, 0)
-
-
-# https://github.com/apache/incubator-tvm/blob/v0.6/src/relay/backend/build_module.cc
+print("Relay module function:\n", mod.astext(show_meta_data=False))
+print("TVM parameters:\n", params.keys())
 
 with relay.build_config(opt_level=3):
   graph, lib, params = relay.build(mod, target, params=params)
 
+print("TVM graph:\n", graph)
+print("TVM parameters:\n", params.keys())
+# print("TVM compiled target function:\n", lib.get_source())
 module = graph_runtime.create(graph, lib, ctx)
 data_tvm = tvm.nd.array((np.random.uniform(-1, 1, size=data_shape)).astype(dtype))
 module.set_input('data', data_tvm)
 module.set_input(**params)
-
 module.run()
 output = module.get_output(0)
-
-print(output)
-print(output.shape)
