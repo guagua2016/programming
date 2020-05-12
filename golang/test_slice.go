@@ -6,8 +6,17 @@ import (
 	"unsafe"
 )
 
+func foo(a *[]byte) {
+	*a = []byte{'1', '3', '5'}
+}
 func main() {
 
+	// ori := make([]byte, 0)
+	var ori []byte
+	foo(&ori)
+	fmt.Println(ori)
+
+	fmt.Println("======================")
 	slice1 := make([]int, 1)
 	fmt.Println(unsafe.Sizeof(slice1))
 	fmt.Println(cap(slice1), len(slice1), unsafe.Pointer(&slice1))

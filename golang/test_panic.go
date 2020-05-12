@@ -1,8 +1,9 @@
 package main
 
 import (
-	"errors"
+	// "errors"
 	"fmt"
+	"time"
 )
 
 type Person struct {
@@ -10,24 +11,34 @@ type Person struct {
 	age  int
 }
 
-func main() {
+func f() {
+	for {
+		time.Sleep(2 * time.Second)
+		fmt.Println(t())
+	}
+}
+
+func t() int32 {
 
 	//defer
-	defer func() {
+	var ret int32
+	ret = 10
+	defer func(ret int32) int32 {
 		fmt.Println("defer func(){}()")
 		if r := recover(); r != nil {
-			fmt.Println("Runtime error caught!", r)
+			// fmt.Println("Runtime error caught!", r)
 		}
+		return ret
 	}()
 
-	//Type Assertion
-	var v interface{}
-	v = Person{"bob", 12}
-	if f, ok := v.(Person); ok {
-		fmt.Println(f.Name)
-	}
-
 	panic("throw a panic")
+	ret = ret + 1
+	return ret
+}
 
-	fmt.Println("hello,world")
+func main() {
+	go f()
+	for {
+
+	}
 }

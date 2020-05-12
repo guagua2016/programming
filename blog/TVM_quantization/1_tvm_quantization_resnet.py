@@ -289,7 +289,7 @@ if __name__ == '__main__':
 
     mod = quantize_relay_module(mod,params,qconfig)
 
-    # autotvm_tune(mod['main'], params, target)
+    autotvm_tune(mod['main'], params, target)
 
     graph,lib,params = build_module(mod, params, target,'tuning_resnet18v1.log')
 
