@@ -1,6 +1,6 @@
 ## Pattern: Sliding window，滑动窗口类型
-325. Maximum Sum Subarray of Size K (easy)
-904. Fruits into Baskets (medium)
+1. Maximum Sum Subarray of Size K (325 easy)
+2. Fruits into Baskets (904 medium)
 
 
 
