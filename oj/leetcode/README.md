@@ -1,5 +1,5 @@
 ## Pattern: Sliding window，滑动窗口类型
-1. [Maximum Sum Subarray of Size K](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
+1. [Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 2. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 4. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
