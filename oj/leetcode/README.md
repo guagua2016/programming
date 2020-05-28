@@ -5,6 +5,8 @@
 3. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
 4. [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
 5. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+#### Exactly K different
+6. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
 
 
 
