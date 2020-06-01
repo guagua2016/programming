@@ -9,7 +9,8 @@
 6. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
 
 
-
+## 2. Pattern: Math
+1. [Probability of a Two Boxes Having The Same Number of Distinct Balls](https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/)
 
 
 ## 2. Pattern: two points, 双指针类型
