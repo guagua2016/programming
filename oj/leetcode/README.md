@@ -15,8 +15,8 @@
 
 ## 3. Pattern: two pointers
 
-[Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
-[Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
+1. [Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
+2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
 
 Pair with Target Sum (easy)
 
