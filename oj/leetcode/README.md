@@ -1,4 +1,4 @@
-## Pattern: Sliding window，滑动窗口类型
+## Pattern: Sliding window
 1. [Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 #### Longest Substring or Maxinum Size Subarray with At Most K Distinct Elements.
@@ -13,8 +13,10 @@
 1. [Probability of a Two Boxes Having The Same Number of Distinct Balls](https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/)
 
 
-## 2. Pattern: two points, 双指针类型
-经典题目：
+## 3. Pattern: two pointers
+
+[Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
+[Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
 
 Pair with Target Sum (easy)
 
