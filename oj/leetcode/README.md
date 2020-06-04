@@ -1,4 +1,4 @@
-## Pattern: Sliding window
+## 1. Pattern: Sliding window
 1. [Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 3. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
