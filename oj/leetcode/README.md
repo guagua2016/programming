@@ -1,11 +1,9 @@
 ## Pattern: Sliding window
 1. [Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-#### Longest Substring or Maxinum Size Subarray with At Most K Distinct Elements.
 3. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
 4. [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
 5. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
-#### Exactly K different
 6. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
 
 
@@ -17,7 +15,7 @@
 
 1. [Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
 2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
-3. todo 676. Implement Magic Dictionary tie tree
+3. 
 
 Pair with Target Sum (easy)
 
@@ -34,6 +32,7 @@ Triplets with Smaller Sum (medium)
 Subarrays with Product Less than a Target (medium)
 
 Dutch National Flag Problem (medium)
+
 
 
 
@@ -237,3 +236,8 @@ Tasks Scheduling Order (medium)
 All Tasks Scheduling Orders (hard)
 
 Alien Dictionary (hard)
+
+## 16. Trie Tree
+1.  [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
+2. [Implement Magic Dictionary](https://leetcode.com/problems/implement-magic-dictionary/)
+
