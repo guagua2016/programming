@@ -19,11 +19,11 @@
 
 
 ## 4. Trie Tree
-1.  [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
+1. [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
 2. [Implement Magic Dictionary](https://leetcode.com/problems/implement-magic-dictionary/)
 
 ## 5. Dynamic Programming
-1.[Paint House III](eetcode.com/problems/paint-house-iii/)
+1. [Paint House III](eetcode.com/problems/paint-house-iii/)
 
 Pair with Target Sum (easy)
 
