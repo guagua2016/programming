@@ -17,6 +17,14 @@
 2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
 3. 
 
+
+## 4. Trie Tree
+1.  [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
+2. [Implement Magic Dictionary](https://leetcode.com/problems/implement-magic-dictionary/)
+
+## 5. Dynamic Programming
+1.[Paint House III](eetcode.com/problems/paint-house-iii/)
+
 Pair with Target Sum (easy)
 
 Remove Duplicates (easy)
@@ -237,7 +245,5 @@ All Tasks Scheduling Orders (hard)
 
 Alien Dictionary (hard)
 
-## 16. Trie Tree
-1.  [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
-2. [Implement Magic Dictionary](https://leetcode.com/problems/implement-magic-dictionary/)
+
 
