@@ -15,7 +15,7 @@
 
 1. [Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
 2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
-3. 
+3. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/)
 
 
 ## 4. Trie Tree
