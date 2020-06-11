@@ -11,6 +11,7 @@
 1. [Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
 2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
 3. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/)
+4. [Partition Labels](https://leetcode.com/problems/partition-labels/)
 
 ## 3. Trie Tree
 1. [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
