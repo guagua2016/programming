@@ -6,24 +6,19 @@
 5. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 6. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
 
-
-## 2. Pattern: Math
-1. [Probability of a Two Boxes Having The Same Number of Distinct Balls](https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/)
-
-
-## 3. Pattern: two pointers
+## 2. Pattern: two pointers
 
 1. [Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
 2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
 3. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/)
 
-
-## 4. Trie Tree
+## 3. Trie Tree
 1. [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
 2. [Implement Magic Dictionary](https://leetcode.com/problems/implement-magic-dictionary/)
 
-## 5. Dynamic Programming
-1. [Paint House III](eetcode.com/problems/paint-house-iii/)
+## 4.Depth First Search && Loop && Dynamic Programming
+1. [Paint House III](https://leetcode.com/problems/paint-house-iii/)
+2. [Probability of a Two Boxes Having The Same Number of Distinct Balls](https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/)
 
 Pair with Target Sum (easy)
 
