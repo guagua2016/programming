@@ -6,7 +6,7 @@
 5. [Fruits into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 6. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
 
-## 2. Pattern: two pointers
+## 2. Pattern: Two Pointers
 
 1. [Longest Word in Dictionary](https://leetcode.com/problems/longest-word-in-dictionary/)
 2. [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)
