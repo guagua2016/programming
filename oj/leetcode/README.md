@@ -14,6 +14,7 @@
 4. [Partition Labels](https://leetcode.com/problems/partition-labels/)
 5. [Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)
 6. [Most Profit Assigning Work](https://leetcode.com/problems/most-profit-assigning-work/)
+7. [Count Unique Characters of All Substrings of a Given String](https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/)
 
 ## 3. Trie Tree
 1. [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
