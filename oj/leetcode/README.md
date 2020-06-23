@@ -24,6 +24,7 @@
 ## 4. Depth First Search && Loop && Dynamic Programming
 1. [Paint House III](https://leetcode.com/problems/paint-house-iii/)
 2. [Probability of a Two Boxes Having The Same Number of Distinct Balls](https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/)
+3. [Avoid Flood in The City](https://leetcode.com/problems/avoid-flood-in-the-city/)
 
 Pair with Target Sum (easy)
 
