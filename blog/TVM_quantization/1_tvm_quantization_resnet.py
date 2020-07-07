@@ -13,7 +13,6 @@ from matplotlib import pyplot as plt
 from collections import namedtuple
 import tvm
 from tvm import relay
-from tvm.relay import quantize as qtz
 from tvm.contrib import download
 from tvm import autotvm
 from tvm.autotvm.tuner import XGBTuner, GATuner, RandomTuner, GridSearchTuner
@@ -104,12 +103,14 @@ def quantize_relay_module(mod, params, qconfig=None):
 
     # default qconfig
     if not qconfig:
-        qconfig = qtz.qconfig()
+        qconfig = tvm.relay.quantize.qconfig()
 
     with qconfig:
         logging.debug('current quantize config')
-        logging.debug(qtz.current_qconfig())
-        mod['main'] = qtz.quantize(mod['main'],params=params)
+        logging.debug(tvm.relay.quantize.current_qconfig())
+        
+        mod = tvm.relay.quantize.quantize(mod,params=params)
+
         logging.debug('after quantize')
         logging.debug(mod['main'].astext(show_meta_data=False))
     return mod
@@ -275,7 +276,7 @@ if __name__ == '__main__':
     target = 'llvm -mcpu=core-avx2'
 
     # Configure the quantization behavior
-    qconfig = qtz.qconfig(skip_conv_layers=[0],
+    qconfig = tvm.relay.quantize.qconfig(skip_conv_layers=[0],
                     nbit_input=8,
                     nbit_weight=8,
                     global_scale=8.0,
@@ -284,16 +285,13 @@ if __name__ == '__main__':
                     dtype_activation='int8',
                     debug_enabled_ops=None)
 
-    # mod['main'] = qtz.prerequisite_optimize(mod['main'],params=params)
-    # logging.info(mod['main'].astext(show_meta_data=False))
-
     mod = quantize_relay_module(mod,params,qconfig)
 
-    autotvm_tune(mod['main'], params, target)
+    # autotvm_tune(mod['main'], params, target)
 
-    graph,lib,params = build_module(mod, params, target,'tuning_resnet18v1.log')
+    # graph,lib,params = build_module(mod, params, target,'tuning_resnet18v1.log')
 
-    save_compiled_module(graph, lib, params, "model")
+    # save_compiled_module(graph, lib, params, "model")
 
-    mod = load_module("model",ctx,True)
-    evaluate(mod,input_shape,ctx)
+    # mod = load_module("model",ctx,True)
+    # evaluate(mod,input_shape,ctx)

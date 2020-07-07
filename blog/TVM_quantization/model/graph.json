@@ -7,11 +7,11 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_22", 
+      "name": "fused_layout_transform_16", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_layout_transform_22", 
+        "func_name": "fused_layout_transform_16", 
         "flatten_data": "0"
       }, 
       "inputs": [
@@ -61,11 +61,11 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_nn_max_pool2d_multiply_round_clip_cast", 
+      "name": "fused_nn_max_pool2d", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_nn_max_pool2d_multiply_round_clip_cast", 
+        "func_name": "fused_nn_max_pool2d", 
         "flatten_data": "0"
       }, 
       "inputs": [
@@ -77,17 +77,12 @@
       ]
     }, 
     {
-      "op": "null", 
-      "name": "p2", 
-      "inputs": []
-    }, 
-    {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_24", 
+      "name": "fused_multiply_round_clip_cast", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_layout_transform_24", 
+        "func_name": "fused_multiply_round_clip_cast", 
         "flatten_data": "0"
       }, 
       "inputs": [
@@ -97,6 +92,11 @@
           0
         ]
       ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p2", 
+      "inputs": []
     }, 
     {
       "op": "null", 
@@ -119,15 +119,30 @@
       "inputs": []
     }, 
     {
+      "op": "null", 
+      "name": "p7", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p8", 
+      "inputs": []
+    }, 
+    {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917_", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917_", 
         "flatten_data": "0"
       }, 
       "inputs": [
+        [
+          6, 
+          0, 
+          0
+        ], 
         [
           7, 
           0, 
@@ -152,58 +167,14 @@
           11, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_23", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_23", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           12, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p7", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p8", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "3", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           13, 
-          0, 
-          0
-        ], 
-        [
-          14, 
-          0, 
-          0
-        ], 
-        [
-          15, 
           0, 
           0
         ]
@@ -220,80 +191,9 @@
       "inputs": []
     }, 
     {
-      "op": "tvm_op", 
-      "name": "fused_left_shift_layout_transform_add_nn_relu_add_right_shift_clip", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_left_shift_layout_transform_add_nn_relu_add_right_shift_clip", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          5, 
-          0, 
-          0
-        ], 
-        [
-          6, 
-          0, 
-          0
-        ], 
-        [
-          16, 
-          0, 
-          0
-        ], 
-        [
-          17, 
-          0, 
-          0
-        ], 
-        [
-          18, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_17", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_cast_17", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          19, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
       "op": "null", 
       "name": "p11", 
       "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_241", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_24", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          19, 
-          0, 
-          0
-        ]
-      ]
     }, 
     {
       "op": "null", 
@@ -317,36 +217,51 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip1", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__3", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__3", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          22, 
+          14, 
           0, 
           0
         ], 
         [
-          23, 
+          15, 
           0, 
           0
         ], 
         [
-          24, 
+          16, 
           0, 
           0
         ], 
         [
-          25, 
+          17, 
           0, 
           0
         ], 
         [
-          26, 
+          18, 
+          0, 
+          0
+        ], 
+        [
+          19, 
+          0, 
+          0
+        ], 
+        [
+          20, 
+          0, 
+          0
+        ], 
+        [
+          21, 
           0, 
           0
         ]
@@ -354,16 +269,38 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_231", 
+      "name": "fused_add_nn_relu_clip_3", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_23", 
+        "num_inputs": "2", 
+        "func_name": "fused_add_nn_relu_clip_3", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          27, 
+          6, 
+          0, 
+          0
+        ], 
+        [
+          22, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_17", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_cast_17", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          23, 
           0, 
           0
         ]
@@ -380,15 +317,60 @@
       "inputs": []
     }, 
     {
+      "op": "null", 
+      "name": "p18", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p19", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p20", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p21", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p22", 
+      "inputs": []
+    }, 
+    {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add1", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917_1", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "3", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917_", 
         "flatten_data": "0"
       }, 
       "inputs": [
+        [
+          23, 
+          0, 
+          0
+        ], 
+        [
+          25, 
+          0, 
+          0
+        ], 
+        [
+          26, 
+          0, 
+          0
+        ], 
+        [
+          27, 
+          0, 
+          0
+        ], 
         [
           28, 
           0, 
@@ -403,104 +385,13 @@
           30, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p18", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p19", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip_1", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip_1", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          20, 
-          0, 
-          0
-        ], 
-        [
-          21, 
-          0, 
-          0
         ], 
         [
           31, 
           0, 
           0
-        ], 
-        [
-          32, 
-          0, 
-          0
-        ], 
-        [
-          33, 
-          0, 
-          0
         ]
       ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_21", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_21", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          34, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p20", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p21", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_26", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_26", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          34, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p22", 
-      "inputs": []
     }, 
     {
       "op": "null", 
@@ -516,60 +407,6 @@
       "op": "null", 
       "name": "p25", 
       "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_1", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_1", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          38, 
-          0, 
-          0
-        ], 
-        [
-          39, 
-          0, 
-          0
-        ], 
-        [
-          40, 
-          0, 
-          0
-        ], 
-        [
-          41, 
-          0, 
-          0
-        ], 
-        [
-          42, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_25", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_25", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          43, 
-          0, 
-          0
-        ]
-      ]
     }, 
     {
       "op": "null", 
@@ -593,14 +430,138 @@
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_right_shift_clip_cast", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__31", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_right_shift_clip_cast", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__3", 
         "flatten_data": "0"
       }, 
       "inputs": [
+        [
+          32, 
+          0, 
+          0
+        ], 
+        [
+          33, 
+          0, 
+          0
+        ], 
+        [
+          34, 
+          0, 
+          0
+        ], 
+        [
+          35, 
+          0, 
+          0
+        ], 
+        [
+          36, 
+          0, 
+          0
+        ], 
+        [
+          37, 
+          0, 
+          0
+        ], 
+        [
+          38, 
+          0, 
+          0
+        ], 
+        [
+          39, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_add_nn_relu_clip_2", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_cast_add_nn_relu_clip_2", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          24, 
+          0, 
+          0
+        ], 
+        [
+          40, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p30", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p31", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p32", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p33", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p34", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p35", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p36", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__2", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__2", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          41, 
+          0, 
+          0
+        ], 
+        [
+          42, 
+          0, 
+          0
+        ], 
+        [
+          43, 
+          0, 
+          0
+        ], 
         [
           44, 
           0, 
@@ -630,63 +591,56 @@
     }, 
     {
       "op": "null", 
-      "name": "p30", 
+      "name": "p37", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p38", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p39", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p40", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p41", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p42", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p43", 
       "inputs": []
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_cast_left_shift_layout_transform", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__1", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "2", 
-        "func_name": "fused_cast_left_shift_layout_transform", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__1", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          49, 
+          41, 
           0, 
           0
         ], 
         [
           50, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p31", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p32", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip_1", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "6", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip_1", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          35, 
-          0, 
-          0
-        ], 
-        [
-          36, 
-          0, 
-          0
-        ], 
-        [
-          37, 
           0, 
           0
         ], 
@@ -704,21 +658,19 @@
           53, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_16", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_cast_16", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           54, 
+          0, 
+          0
+        ], 
+        [
+          55, 
+          0, 
+          0
+        ], 
+        [
+          56, 
           0, 
           0
         ]
@@ -726,53 +678,46 @@
     }, 
     {
       "op": "null", 
-      "name": "p33", 
+      "name": "p44", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p45", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p46", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p47", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p48", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p49", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p50", 
       "inputs": []
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_27", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__4", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_27", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          54, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p34", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p35", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p36", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p37", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_2", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_2", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__4", 
         "flatten_data": "0"
       }, 
       "inputs": [
@@ -800,46 +745,12 @@
           61, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_251", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_25", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           62, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p38", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p39", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_1", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "3", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_1", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           63, 
           0, 
@@ -847,6 +758,23 @@
         ], 
         [
           64, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_add_nn_relu_clip_2", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_add_nn_relu_clip_2", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          49, 
           0, 
           0
         ], 
@@ -858,42 +786,69 @@
       ]
     }, 
     {
-      "op": "null", 
-      "name": "p40", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p41", 
-      "inputs": []
-    }, 
-    {
       "op": "tvm_op", 
-      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip", 
+      "name": "fused_cast_16", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_add_right_shift_clip", 
+        "num_inputs": "1", 
+        "func_name": "fused_cast_16", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          55, 
-          0, 
-          0
-        ], 
-        [
-          56, 
-          0, 
-          0
-        ], 
-        [
           66, 
           0, 
           0
-        ], 
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p51", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p52", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p53", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p54", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p55", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p56", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p57", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__2", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__2", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
         [
-          67, 
+          66, 
           0, 
           0
         ], 
@@ -901,68 +856,24 @@
           68, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_20", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_20", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           69, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p42", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p43", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p44", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p45", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p46", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p47", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_3", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_3", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
-          69, 
+          70, 
+          0, 
+          0
+        ], 
+        [
+          71, 
+          0, 
+          0
+        ], 
+        [
+          72, 
           0, 
           0
         ], 
@@ -975,7 +886,54 @@
           74, 
           0, 
           0
-        ], 
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p58", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p59", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p60", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p61", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p62", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p63", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p64", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__41", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__4", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
         [
           75, 
           0, 
@@ -985,56 +943,12 @@
           76, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_28", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_28", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           77, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p48", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p49", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p50", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p51", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_right_shift_clip_cast_1", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_right_shift_clip_cast_1", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           78, 
           0, 
@@ -1063,42 +977,17 @@
       ]
     }, 
     {
-      "op": "null", 
-      "name": "p52", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p53", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p54", 
-      "inputs": []
-    }, 
-    {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440_", 
+      "name": "fused_cast_add_nn_relu_clip_1", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "7", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_cast_left_shift_add_nn_relu_add_right_shift_cl_11436298953632236440_", 
+        "num_inputs": "2", 
+        "func_name": "fused_cast_add_nn_relu_clip_1", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          70, 
-          0, 
-          0
-        ], 
-        [
-          71, 
-          0, 
-          0
-        ], 
-        [
-          72, 
+          67, 
           0, 
           0
         ], 
@@ -1106,247 +995,13 @@
           83, 
           0, 
           0
-        ], 
-        [
-          84, 
-          0, 
-          0
-        ], 
-        [
-          85, 
-          0, 
-          0
-        ], 
-        [
-          86, 
-          0, 
-          0
         ]
       ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_15", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_cast_15", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          87, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p55", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_281", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_28", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          87, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p56", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p57", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p58", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p59", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_4", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_4", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          90, 
-          0, 
-          0
-        ], 
-        [
-          91, 
-          0, 
-          0
-        ], 
-        [
-          92, 
-          0, 
-          0
-        ], 
-        [
-          93, 
-          0, 
-          0
-        ], 
-        [
-          94, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_282", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_28", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          95, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p60", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p61", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p62", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p63", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_left_shift_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_cl_9793482764995001945_", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "7", 
-        "func_name": "fused_cast_left_shift_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_cl_9793482764995001945_", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          88, 
-          0, 
-          0
-        ], 
-        [
-          89, 
-          0, 
-          0
-        ], 
-        [
-          96, 
-          0, 
-          0
-        ], 
-        [
-          97, 
-          0, 
-          0
-        ], 
-        [
-          98, 
-          0, 
-          0
-        ], 
-        [
-          99, 
-          0, 
-          0
-        ], 
-        [
-          100, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_19", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_19", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          101, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p64", 
-      "inputs": []
     }, 
     {
       "op": "null", 
       "name": "p65", 
       "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_30", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_30", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          101, 
-          0, 
-          0
-        ]
-      ]
     }, 
     {
       "op": "null", 
@@ -1369,15 +1024,224 @@
       "inputs": []
     }, 
     {
+      "op": "null", 
+      "name": "p70", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p71", 
+      "inputs": []
+    }, 
+    {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_5", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__1", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_5", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__1", 
         "flatten_data": "0"
       }, 
       "inputs": [
+        [
+          84, 
+          0, 
+          0
+        ], 
+        [
+          85, 
+          0, 
+          0
+        ], 
+        [
+          86, 
+          0, 
+          0
+        ], 
+        [
+          87, 
+          0, 
+          0
+        ], 
+        [
+          88, 
+          0, 
+          0
+        ], 
+        [
+          89, 
+          0, 
+          0
+        ], 
+        [
+          90, 
+          0, 
+          0
+        ], 
+        [
+          91, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p72", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p73", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p74", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p75", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p76", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p77", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p78", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__3", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__3", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          84, 
+          0, 
+          0
+        ], 
+        [
+          93, 
+          0, 
+          0
+        ], 
+        [
+          94, 
+          0, 
+          0
+        ], 
+        [
+          95, 
+          0, 
+          0
+        ], 
+        [
+          96, 
+          0, 
+          0
+        ], 
+        [
+          97, 
+          0, 
+          0
+        ], 
+        [
+          98, 
+          0, 
+          0
+        ], 
+        [
+          99, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p79", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p80", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p81", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p82", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p83", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p84", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p85", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__5", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__5", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          100, 
+          0, 
+          0
+        ], 
+        [
+          101, 
+          0, 
+          0
+        ], 
+        [
+          102, 
+          0, 
+          0
+        ], 
+        [
+          103, 
+          0, 
+          0
+        ], 
+        [
+          104, 
+          0, 
+          0
+        ], 
         [
           105, 
           0, 
@@ -1392,12 +1256,41 @@
           107, 
           0, 
           0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_add_nn_relu_clip_1", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_add_nn_relu_clip_1", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          92, 
+          0, 
+          0
         ], 
         [
           108, 
           0, 
           0
-        ], 
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_15", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "1", 
+        "func_name": "fused_cast_15", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
         [
           109, 
           0, 
@@ -1406,52 +1299,55 @@
       ]
     }, 
     {
+      "op": "null", 
+      "name": "p86", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p87", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p88", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p89", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p90", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p91", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p92", 
+      "inputs": []
+    }, 
+    {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_29", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__4", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_29", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__4", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          110, 
+          109, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p70", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p71", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p72", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p73", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_right_shift_clip_cast_2", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_right_shift_clip_cast_2", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           111, 
           0, 
@@ -1476,24 +1372,7 @@
           115, 
           0, 
           0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p74", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_left_shift_layout_transform_1", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "2", 
-        "func_name": "fused_cast_left_shift_layout_transform_1", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
+        ], 
         [
           116, 
           0, 
@@ -1508,39 +1387,49 @@
     }, 
     {
       "op": "null", 
-      "name": "p75", 
+      "name": "p93", 
       "inputs": []
     }, 
     {
       "op": "null", 
-      "name": "p76", 
+      "name": "p94", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p95", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p96", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p97", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p98", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p99", 
       "inputs": []
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__51", 
       "attrs": {
         "num_outputs": "1", 
-        "num_inputs": "6", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_add_nn_relu_add_right_shift_clip", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__5", 
         "flatten_data": "0"
       }, 
       "inputs": [
-        [
-          102, 
-          0, 
-          0
-        ], 
-        [
-          103, 
-          0, 
-          0
-        ], 
-        [
-          104, 
-          0, 
-          0
-        ], 
         [
           118, 
           0, 
@@ -1553,6 +1442,336 @@
         ], 
         [
           120, 
+          0, 
+          0
+        ], 
+        [
+          121, 
+          0, 
+          0
+        ], 
+        [
+          122, 
+          0, 
+          0
+        ], 
+        [
+          123, 
+          0, 
+          0
+        ], 
+        [
+          124, 
+          0, 
+          0
+        ], 
+        [
+          125, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_add_nn_relu_clip", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_cast_add_nn_relu_clip", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          110, 
+          0, 
+          0
+        ], 
+        [
+          126, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p100", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p101", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p102", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p103", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p104", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p105", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p106", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099_", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099_", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          127, 
+          0, 
+          0
+        ], 
+        [
+          128, 
+          0, 
+          0
+        ], 
+        [
+          129, 
+          0, 
+          0
+        ], 
+        [
+          130, 
+          0, 
+          0
+        ], 
+        [
+          131, 
+          0, 
+          0
+        ], 
+        [
+          132, 
+          0, 
+          0
+        ], 
+        [
+          133, 
+          0, 
+          0
+        ], 
+        [
+          134, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p107", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p108", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p109", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p110", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p111", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p112", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p113", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__5", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__5", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          127, 
+          0, 
+          0
+        ], 
+        [
+          136, 
+          0, 
+          0
+        ], 
+        [
+          137, 
+          0, 
+          0
+        ], 
+        [
+          138, 
+          0, 
+          0
+        ], 
+        [
+          139, 
+          0, 
+          0
+        ], 
+        [
+          140, 
+          0, 
+          0
+        ], 
+        [
+          141, 
+          0, 
+          0
+        ], 
+        [
+          142, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p114", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p115", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p116", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p117", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p118", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p119", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p120", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__6", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__6", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          143, 
+          0, 
+          0
+        ], 
+        [
+          144, 
+          0, 
+          0
+        ], 
+        [
+          145, 
+          0, 
+          0
+        ], 
+        [
+          146, 
+          0, 
+          0
+        ], 
+        [
+          147, 
+          0, 
+          0
+        ], 
+        [
+          148, 
+          0, 
+          0
+        ], 
+        [
+          149, 
+          0, 
+          0
+        ], 
+        [
+          150, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_add_nn_relu_clip", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_add_nn_relu_clip", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          135, 
+          0, 
+          0
+        ], 
+        [
+          151, 
           0, 
           0
         ]
@@ -1569,7 +1788,7 @@
       }, 
       "inputs": [
         [
-          121, 
+          152, 
           0, 
           0
         ]
@@ -1577,176 +1796,212 @@
     }, 
     {
       "op": "null", 
-      "name": "p77", 
+      "name": "p121", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p122", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p123", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p124", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p125", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p126", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p127", 
       "inputs": []
     }, 
     {
       "op": "tvm_op", 
-      "name": "fused_layout_transform_32", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__6", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_nn_relu_add_righ_7267740340167632917__6", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          152, 
+          0, 
+          0
+        ], 
+        [
+          154, 
+          0, 
+          0
+        ], 
+        [
+          155, 
+          0, 
+          0
+        ], 
+        [
+          156, 
+          0, 
+          0
+        ], 
+        [
+          157, 
+          0, 
+          0
+        ], 
+        [
+          158, 
+          0, 
+          0
+        ], 
+        [
+          159, 
+          0, 
+          0
+        ], 
+        [
+          160, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "null", 
+      "name": "p128", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p129", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p130", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p131", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p132", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p133", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "p134", 
+      "inputs": []
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__61", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "8", 
+        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_right_shift_clip_multiply_add_add_right_shift__13599015897031977099__6", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          161, 
+          0, 
+          0
+        ], 
+        [
+          162, 
+          0, 
+          0
+        ], 
+        [
+          163, 
+          0, 
+          0
+        ], 
+        [
+          164, 
+          0, 
+          0
+        ], 
+        [
+          165, 
+          0, 
+          0
+        ], 
+        [
+          166, 
+          0, 
+          0
+        ], 
+        [
+          167, 
+          0, 
+          0
+        ], 
+        [
+          168, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_cast_add_nn_relu", 
+      "attrs": {
+        "num_outputs": "1", 
+        "num_inputs": "2", 
+        "func_name": "fused_cast_add_nn_relu", 
+        "flatten_data": "0"
+      }, 
+      "inputs": [
+        [
+          153, 
+          0, 
+          0
+        ], 
+        [
+          169, 
+          0, 
+          0
+        ]
+      ]
+    }, 
+    {
+      "op": "tvm_op", 
+      "name": "fused_nn_global_avg_pool2d_cast_multiply", 
       "attrs": {
         "num_outputs": "1", 
         "num_inputs": "1", 
-        "func_name": "fused_layout_transform_32", 
+        "func_name": "fused_nn_global_avg_pool2d_cast_multiply", 
         "flatten_data": "0"
       }, 
       "inputs": [
         [
-          121, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p78", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p79", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p80", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p81", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_6", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "5", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_nn_relu_add_right_shift_clip_6", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          124, 
-          0, 
-          0
-        ], 
-        [
-          125, 
-          0, 
-          0
-        ], 
-        [
-          126, 
-          0, 
-          0
-        ], 
-        [
-          127, 
-          0, 
-          0
-        ], 
-        [
-          128, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_layout_transform_31", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_layout_transform_31", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          129, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "null", 
-      "name": "p82", 
-      "inputs": []
-    }, 
-    {
-      "op": "null", 
-      "name": "p83", 
-      "inputs": []
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_contrib_conv2d_NCHWc_add_2", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "3", 
-        "func_name": "fused_nn_contrib_conv2d_NCHWc_add_2", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          130, 
-          0, 
-          0
-        ], 
-        [
-          131, 
-          0, 
-          0
-        ], 
-        [
-          132, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_cast_left_shift_layout_transform_add_nn_relu_cast_multiply", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "3", 
-        "func_name": "fused_cast_left_shift_layout_transform_add_nn_relu_cast_multiply", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          122, 
-          0, 
-          0
-        ], 
-        [
-          123, 
-          0, 
-          0
-        ], 
-        [
-          133, 
-          0, 
-          0
-        ]
-      ]
-    }, 
-    {
-      "op": "tvm_op", 
-      "name": "fused_nn_global_avg_pool2d", 
-      "attrs": {
-        "num_outputs": "1", 
-        "num_inputs": "1", 
-        "func_name": "fused_nn_global_avg_pool2d", 
-        "flatten_data": "0"
-      }, 
-      "inputs": [
-        [
-          134, 
+          170, 
           0, 
           0
         ]
@@ -1763,7 +2018,7 @@
       }, 
       "inputs": [
         [
-          135, 
+          171, 
           0, 
           0
         ]
@@ -1771,12 +2026,12 @@
     }, 
     {
       "op": "null", 
-      "name": "p84", 
+      "name": "p135", 
       "inputs": []
     }, 
     {
       "op": "null", 
-      "name": "p85", 
+      "name": "p136", 
       "inputs": []
     }, 
     {
@@ -1790,17 +2045,17 @@
       }, 
       "inputs": [
         [
-          136, 
+          172, 
           0, 
           0
         ], 
         [
-          137, 
+          173, 
           0, 
           0
         ], 
         [
-          138, 
+          174, 
           0, 
           0
         ]
@@ -1811,94 +2066,145 @@
     0, 
     2, 
     3, 
-    6, 
+    7, 
     8, 
     9, 
     10, 
     11, 
-    14, 
+    12, 
+    13, 
     15, 
+    16, 
     17, 
     18, 
+    19, 
+    20, 
     21, 
-    23, 
-    24, 
     25, 
     26, 
+    27, 
+    28, 
     29, 
     30, 
-    32, 
+    31, 
     33, 
+    34, 
+    35, 
     36, 
     37, 
+    38, 
     39, 
-    40, 
-    41, 
     42, 
+    43, 
+    44, 
     45, 
     46, 
     47, 
     48, 
     50, 
+    51, 
     52, 
     53, 
+    54, 
+    55, 
     56, 
     58, 
     59, 
     60, 
     61, 
+    62, 
+    63, 
     64, 
-    65, 
-    67, 
     68, 
+    69, 
+    70, 
     71, 
     72, 
     73, 
     74, 
-    75, 
     76, 
+    77, 
+    78, 
     79, 
     80, 
     81, 
     82, 
-    84, 
     85, 
     86, 
+    87, 
+    88, 
     89, 
+    90, 
     91, 
-    92, 
     93, 
     94, 
+    95, 
+    96, 
     97, 
     98, 
     99, 
-    100, 
+    101, 
+    102, 
     103, 
     104, 
+    105, 
     106, 
     107, 
-    108, 
-    109, 
+    111, 
     112, 
     113, 
     114, 
     115, 
+    116, 
     117, 
     119, 
     120, 
+    121, 
+    122, 
     123, 
+    124, 
     125, 
-    126, 
-    127, 
     128, 
+    129, 
+    130, 
     131, 
     132, 
+    133, 
+    134, 
+    136, 
     137, 
-    138
+    138, 
+    139, 
+    140, 
+    141, 
+    142, 
+    144, 
+    145, 
+    146, 
+    147, 
+    148, 
+    149, 
+    150, 
+    154, 
+    155, 
+    156, 
+    157, 
+    158, 
+    159, 
+    160, 
+    162, 
+    163, 
+    164, 
+    165, 
+    166, 
+    167, 
+    168, 
+    173, 
+    174
   ], 
   "heads": [
     [
-      139, 
+      175, 
       0, 
       0
     ]
@@ -1912,136 +2218,172 @@
         "float32", 
         "float32", 
         "float32", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
-        "int8", 
         "float32", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
+        "int8", 
         "float32", 
         "float32", 
         "float32", 
@@ -2058,136 +2400,172 @@
         [1, 8, 1, 1, 8], 
         [1, 8, 112, 112, 8], 
         [1, 8, 56, 56, 8], 
-        [], 
-        [1, 16, 56, 56, 4], 
-        [2, 16, 3, 3, 4, 32], 
-        [1, 2, 1, 1, 32], 
+        [1, 8, 56, 56, 8], 
+        [8, 8, 3, 3, 8, 8], 
         [], 
         [], 
-        [1, 2, 56, 56, 32], 
-        [1, 16, 56, 56, 4], 
-        [2, 16, 3, 3, 4, 32], 
-        [1, 2, 1, 1, 32], 
-        [1, 2, 56, 56, 32], 
+        [1, 8, 1, 1, 8], 
+        [1, 8, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 8, 56, 56, 8], 
+        [8, 8, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 8, 1, 1, 8], 
+        [1, 8, 1, 1, 8], 
         [], 
         [], 
         [1, 8, 56, 56, 8], 
         [1, 8, 56, 56, 8], 
-        [], 
-        [1, 16, 56, 56, 4], 
-        [2, 16, 3, 3, 4, 32], 
-        [1, 2, 1, 1, 32], 
+        [1, 8, 56, 56, 8], 
+        [8, 8, 3, 3, 8, 8], 
         [], 
         [], 
-        [1, 2, 56, 56, 32], 
-        [1, 16, 56, 56, 4], 
-        [2, 16, 3, 3, 4, 32], 
-        [1, 2, 1, 1, 32], 
-        [1, 2, 56, 56, 32], 
+        [1, 8, 1, 1, 8], 
+        [1, 8, 1, 1, 8], 
         [], 
         [], 
         [1, 8, 56, 56, 8], 
-        [1, 32, 56, 56, 2], 
-        [4, 32, 1, 1, 2, 32], 
-        [1, 4, 1, 1, 32], 
-        [1, 2, 56, 56, 32], 
-        [2, 2, 3, 3, 32, 64], 
-        [1, 2, 1, 1, 64], 
+        [8, 8, 3, 3, 8, 8], 
         [], 
         [], 
-        [1, 2, 28, 28, 64], 
-        [1, 128, 28, 28, 1], 
-        [2, 128, 3, 3, 1, 64], 
-        [1, 2, 1, 1, 64], 
+        [1, 8, 1, 1, 8], 
+        [1, 8, 1, 1, 8], 
         [], 
         [], 
-        [1, 2, 28, 28, 64], 
-        [], 
-        [1, 4, 28, 28, 32], 
-        [], 
-        [], 
-        [1, 4, 28, 28, 32], 
-        [1, 4, 28, 28, 32], 
-        [], 
-        [1, 128, 28, 28, 1], 
-        [2, 128, 3, 3, 1, 64], 
-        [1, 2, 1, 1, 64], 
+        [1, 8, 56, 56, 8], 
+        [1, 8, 56, 56, 8], 
+        [16, 8, 1, 1, 8, 8], 
         [], 
         [], 
-        [1, 2, 28, 28, 64], 
-        [1, 128, 28, 28, 1], 
-        [2, 128, 3, 3, 1, 64], 
-        [1, 2, 1, 1, 64], 
-        [1, 2, 28, 28, 64], 
+        [1, 16, 1, 1, 8], 
+        [1, 16, 1, 1, 8], 
         [], 
         [], 
-        [1, 4, 28, 28, 32], 
-        [1, 64, 28, 28, 2], 
-        [4, 64, 1, 1, 2, 64], 
-        [1, 4, 1, 1, 64], 
-        [4, 4, 3, 3, 32, 64], 
-        [1, 4, 1, 1, 64], 
+        [1, 16, 28, 28, 8], 
+        [16, 8, 3, 3, 8, 8], 
         [], 
         [], 
-        [1, 4, 14, 14, 64], 
-        [1, 256, 14, 14, 1], 
-        [4, 256, 3, 3, 1, 64], 
-        [1, 4, 1, 1, 64], 
+        [1, 16, 1, 1, 8], 
+        [1, 16, 1, 1, 8], 
         [], 
         [], 
-        [1, 4, 14, 14, 64], 
+        [1, 16, 28, 28, 8], 
+        [16, 16, 3, 3, 8, 8], 
         [], 
         [], 
-        [], 
-        [1, 4, 14, 14, 64], 
-        [1, 4, 14, 14, 64], 
-        [], 
-        [1, 256, 14, 14, 1], 
-        [4, 256, 3, 3, 1, 64], 
-        [1, 4, 1, 1, 64], 
+        [1, 16, 1, 1, 8], 
+        [1, 16, 1, 1, 8], 
         [], 
         [], 
-        [1, 4, 14, 14, 64], 
-        [1, 256, 14, 14, 1], 
-        [4, 256, 3, 3, 1, 64], 
-        [1, 4, 1, 1, 64], 
+        [1, 16, 28, 28, 8], 
+        [1, 16, 28, 28, 8], 
+        [1, 16, 28, 28, 8], 
+        [16, 16, 3, 3, 8, 8], 
         [], 
         [], 
-        [1, 4, 14, 14, 64], 
-        [1, 128, 14, 14, 2], 
-        [16, 128, 1, 1, 2, 32], 
-        [1, 16, 1, 1, 32], 
-        [1, 16, 14, 14, 16], 
-        [2, 16, 3, 3, 16, 256], 
-        [1, 2, 1, 1, 256], 
+        [1, 16, 1, 1, 8], 
+        [1, 16, 1, 1, 8], 
         [], 
         [], 
-        [1, 2, 7, 7, 256], 
-        [1, 1, 7, 7, 512], 
-        [8, 1, 3, 3, 512, 64], 
-        [1, 8, 1, 1, 64], 
+        [1, 16, 28, 28, 8], 
+        [16, 16, 3, 3, 8, 8], 
         [], 
         [], 
-        [1, 8, 7, 7, 64], 
-        [], 
-        [1, 16, 7, 7, 32], 
-        [], 
-        [], 
-        [1, 16, 7, 7, 32], 
-        [1, 16, 7, 7, 32], 
-        [], 
-        [1, 1, 7, 7, 512], 
-        [8, 1, 3, 3, 512, 64], 
-        [1, 8, 1, 1, 64], 
+        [1, 16, 1, 1, 8], 
+        [1, 16, 1, 1, 8], 
         [], 
         [], 
-        [1, 8, 7, 7, 64], 
-        [1, 1, 7, 7, 512], 
-        [8, 1, 3, 3, 512, 64], 
-        [1, 8, 1, 1, 64], 
-        [1, 8, 7, 7, 64], 
-        [1, 16, 7, 7, 32], 
-        [1, 16, 1, 1, 32], 
+        [1, 16, 28, 28, 8], 
+        [1, 16, 28, 28, 8], 
+        [32, 16, 1, 1, 8, 8], 
+        [], 
+        [], 
+        [1, 32, 1, 1, 8], 
+        [1, 32, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 32, 14, 14, 8], 
+        [32, 16, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 32, 1, 1, 8], 
+        [1, 32, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 32, 14, 14, 8], 
+        [32, 32, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 32, 1, 1, 8], 
+        [1, 32, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 32, 14, 14, 8], 
+        [1, 32, 14, 14, 8], 
+        [1, 32, 14, 14, 8], 
+        [32, 32, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 32, 1, 1, 8], 
+        [1, 32, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 32, 14, 14, 8], 
+        [32, 32, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 32, 1, 1, 8], 
+        [1, 32, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 32, 14, 14, 8], 
+        [1, 32, 14, 14, 8], 
+        [64, 32, 1, 1, 8, 8], 
+        [], 
+        [], 
+        [1, 64, 1, 1, 8], 
+        [1, 64, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 64, 7, 7, 8], 
+        [64, 32, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 64, 1, 1, 8], 
+        [1, 64, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 64, 7, 7, 8], 
+        [64, 64, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 64, 1, 1, 8], 
+        [1, 64, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 64, 7, 7, 8], 
+        [1, 64, 7, 7, 8], 
+        [1, 64, 7, 7, 8], 
+        [64, 64, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 64, 1, 1, 8], 
+        [1, 64, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 64, 7, 7, 8], 
+        [64, 64, 3, 3, 8, 8], 
+        [], 
+        [], 
+        [1, 64, 1, 1, 8], 
+        [1, 64, 1, 1, 8], 
+        [], 
+        [], 
+        [1, 64, 7, 7, 8], 
+        [1, 64, 7, 7, 8], 
+        [1, 64, 1, 1, 8], 
         [1, 512], 
         [1000, 512], 
         [1000], 
@@ -2203,140 +2581,176 @@
         3, 
         4, 
         1, 
-        5, 
         4, 
+        5, 
         6, 
         7, 
         8, 
         9, 
         10, 
-        4, 
         11, 
+        1, 
         12, 
-        10, 
         13, 
         14, 
-        4, 
-        10, 
         15, 
-        1, 
         16, 
         17, 
         18, 
         19, 
-        4, 
         1, 
+        19, 
         20, 
         21, 
-        4, 
         22, 
         23, 
-        1, 
-        10, 
         24, 
         25, 
-        4, 
         26, 
+        4, 
         27, 
         28, 
         29, 
-        1, 
         30, 
         31, 
         32, 
         33, 
-        34, 
         1, 
+        4, 
+        34, 
         35, 
-        30, 
         36, 
         37, 
-        1, 
-        30, 
         38, 
-        10, 
         39, 
         40, 
+        19, 
         41, 
         42, 
-        1, 
-        10, 
         43, 
         44, 
-        1, 
         45, 
         46, 
-        10, 
-        30, 
         47, 
+        1, 
         48, 
         49, 
         50, 
         51, 
         52, 
-        1, 
-        10, 
         53, 
         54, 
         55, 
-        56, 
         1, 
+        55, 
+        56, 
         57, 
         58, 
         59, 
-        10, 
-        30, 
         60, 
-        1, 
         61, 
         62, 
+        19, 
         63, 
         64, 
-        10, 
-        1, 
         65, 
         66, 
         67, 
         68, 
-        10, 
-        30, 
         69, 
-        70, 
         1, 
+        19, 
+        70, 
         71, 
         72, 
         73, 
         74, 
-        10, 
         75, 
         76, 
+        55, 
         77, 
         78, 
         79, 
-        10, 
         80, 
-        75, 
         81, 
         82, 
-        10, 
-        75, 
         83, 
-        30, 
+        1, 
         84, 
         85, 
         86, 
         87, 
-        10, 
-        30, 
         88, 
         89, 
-        10, 
-        30, 
-        75, 
         90, 
+        19, 
+        1, 
+        55, 
         91, 
         92, 
-        75
+        93, 
+        94, 
+        95, 
+        96, 
+        97, 
+        19, 
+        98, 
+        99, 
+        100, 
+        101, 
+        102, 
+        103, 
+        104, 
+        1, 
+        19, 
+        105, 
+        106, 
+        107, 
+        108, 
+        109, 
+        110, 
+        111, 
+        55, 
+        112, 
+        113, 
+        114, 
+        115, 
+        116, 
+        117, 
+        118, 
+        119, 
+        120, 
+        121, 
+        122, 
+        123, 
+        124, 
+        125, 
+        126, 
+        19, 
+        119, 
+        55, 
+        127, 
+        128, 
+        129, 
+        130, 
+        131, 
+        132, 
+        133, 
+        19, 
+        134, 
+        135, 
+        136, 
+        137, 
+        138, 
+        139, 
+        140, 
+        119, 
+        19, 
+        119, 
+        141, 
+        142, 
+        143, 
+        119
       ]
     ]
   }, 
@@ -2481,6 +2895,42 @@
     137, 
     138, 
     139, 
-    140
+    140, 
+    141, 
+    142, 
+    143, 
+    144, 
+    145, 
+    146, 
+    147, 
+    148, 
+    149, 
+    150, 
+    151, 
+    152, 
+    153, 
+    154, 
+    155, 
+    156, 
+    157, 
+    158, 
+    159, 
+    160, 
+    161, 
+    162, 
+    163, 
+    164, 
+    165, 
+    166, 
+    167, 
+    168, 
+    169, 
+    170, 
+    171, 
+    172, 
+    173, 
+    174, 
+    175, 
+    176
   ]
 }

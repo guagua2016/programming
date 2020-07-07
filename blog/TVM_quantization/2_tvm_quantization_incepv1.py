@@ -97,10 +97,10 @@ def quantize_relay_module(mod, params, qconfig=None):
 
     with qconfig:
         logging.debug('current quantize config')
-        logging.debug(qtz.current_qconfig())
-        mod['main'] = qtz.quantize(mod['main'],params=params)
+        # logging.debug(qtz.current_qconfig())
+        mod['main'] = tvm.relay.quantize(mod['main'],params=params)
         logging.debug('after quantize')
-        logging.debug(mod['main'].astext(show_meta_data=False))
+        # logging.debug(mod['main'].astext(show_meta_data=False))
     return mod
 
 
@@ -268,7 +268,7 @@ if __name__ == '__main__':
     tf_Inception_v1_path = '/home/terse/code/programming/blog/TVM_quantization/tf/InceptionV1/classify_image_graph_def-with_shapes.pb'
     mod,params,input_shape = get_tf_model_InceptionV1(tf_Inception_v1_path)
 
-    logging.info(mod['main'].astext(show_meta_data=False))
+    # logging.info(mod['main'].astext(show_meta_data=False))
 
     ctx = tvm.cpu()
     target = 'llvm -mcpu=core-avx2'
@@ -291,10 +291,10 @@ if __name__ == '__main__':
     # autotvm_tune(mod['main'], params, target)
 
     # graph,lib,params = build_module(mod, params, target,'tuning_inceptv1.log')
-    graph,lib,params = build_module(mod, params, target)
+    # graph,lib,params = build_module(mod, params, target)
 
-    save_compiled_module(graph, lib, params, "model_inception")
+    # save_compiled_module(graph, lib, params, "model_inception")
 
-    mod = load_module("model_inception",ctx,True)
+    # mod = load_module("model_inception",ctx,True)
     
-    evaluate(mod,input_shape,ctx)
+    # evaluate(mod,input_shape,ctx)
