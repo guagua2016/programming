@@ -1,4 +1,4 @@
-## 1. Pattern: Sliding window
+## 1. Sliding window
 1. [Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 3. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
@@ -25,6 +25,14 @@
 1. [Paint House III](https://leetcode.com/problems/paint-house-iii/)
 2. [Probability of a Two Boxes Having The Same Number of Distinct Balls](https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/)
 3. [Avoid Flood in The City](https://leetcode.com/problems/avoid-flood-in-the-city/)
+
+## 5. Graph
+1. [Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
+2. [https://leetcode.com/problems/friend-circles/](https://leetcode.com/problems/friend-circles/)
+
+## 6. Greedy && Brainteaser
+1. [Minimum Possible Integer After at Most K Adjacent Swaps On Digits](https://leetcode.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits/)
+2. [Last Moment Before All Ants Fall Out of a Plank](https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/)
 
 Pair with Target Sum (easy)
 
