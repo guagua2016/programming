@@ -9,5 +9,5 @@
 ## 3. channel的使用
  - 不带缓冲和带缓冲的channel
  - select 与 channel
- - 
+ - channel的关闭
 2. 空结构体struct{}
