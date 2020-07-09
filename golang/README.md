@@ -7,5 +7,7 @@
   - https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-context/
   
 ## 3. channel的使用
+ - 不带缓冲和带缓冲的channel
+ - select 与 channel
  - 
 2. 空结构体struct{}
