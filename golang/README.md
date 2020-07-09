@@ -1,4 +1,4 @@
-1. Goroutine如何同步？
+## 1. Goroutine如何同步？
  - channel
  - sync.WaitGroup
  - sync.Mutext,sync.RWMutext
