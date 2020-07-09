@@ -1,3 +1,4 @@
+ [Uber Go Style Guide](https://github.com/uber-go/guide) 
 ## 1. Goroutine如何同步？
  - channel
  - sync.WaitGroup
