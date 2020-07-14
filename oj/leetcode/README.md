@@ -29,6 +29,7 @@
 ## 5. Graph
 1. [Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
 2. [https://leetcode.com/problems/friend-circles/](https://leetcode.com/problems/friend-circles/)
+3. [Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability/)
 
 ## 6. Greedy && Brainteaser
 1. [Minimum Possible Integer After at Most K Adjacent Swaps On Digits](https://leetcode.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits/)
