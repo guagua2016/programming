@@ -28,12 +28,14 @@
 
 ## 5. Graph
 1. [Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
-2. [https://leetcode.com/problems/friend-circles/](https://leetcode.com/problems/friend-circles/)
+2. [friend circles](https://leetcode.com/problems/friend-circles/)
 3. [Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability/)
+4. [Best Position for a Service Centre] (https://leetcode.com/problems/best-position-for-a-service-centre/)
 
 ## 6. Greedy && Brainteaser
 1. [Minimum Possible Integer After at Most K Adjacent Swaps On Digits](https://leetcode.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits/)
 2. [Last Moment Before All Ants Fall Out of a Plank](https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/)
+
 
 Pair with Target Sum (easy)
 
