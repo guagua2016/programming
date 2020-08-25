@@ -2,7 +2,7 @@
 ## golang
 1. golang中的new和make区别？
 2. golang中的defer？调用时机？调用顺序？预计算值？
-3. golang中的匿名函数？闭包？https://zhuanlan.zhihu.com/p/92634505
+3. golang中的匿名函数？闭包？闭包延时绑定问题？
 
 2. go怎么做goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
 3. 协程交替执行,使其能顺序输出1-20的自然数
