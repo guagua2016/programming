@@ -7,7 +7,7 @@
 5. golang中的内存管理？对比C++中的内存管理？堆、栈和逃逸分析？三级内存管理？三色标记垃圾回收？
 6. golang怎么做Goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
 3. 协程交替执行,使其能顺序输出1-20的自然数code
-4. 生产者消费者模式code
+4. [生产者消费者模式code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/producer_consumer.go)
 5. 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781
 6. channel关闭后读操作会发生什么？写操作会发生什么？
 7. golang中的main函数和init函数？
