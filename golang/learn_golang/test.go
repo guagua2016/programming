@@ -2,53 +2,27 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
-type User struct {
-	Id   int
-	Name string
-	Age  int
-}
-
-func (u User) ReflectCallFunc() {
-	fmt.Println("Allen.Wu ReflectCallFunc")
+type Person struct {
+	age  int32
+	name string
 }
 
 func main() {
 
-	user := User{1, "Allen.Wu", 25}
+	s1 := [3]int{1, 2, 3}
+	s2 := s1
+	s1[1] = 100
 
-	typeOfUser := reflect.TypeOf(user)
-	fmt.Println(typeOfUser.Name(), typeOfUser.NumField(), typeOfUser.NumMethod())
+	fmt.Printf("%+v,%+v\n", s1, s2)
 
-	DoFiledAndMethod(user)
+	var p2 Person
+	p1 := &Person{}
+	p1.age = 10
+	p1.name = "nnn"
 
-}
+	p2 = *p1
 
-// 通过接口来获取任意参数，然后一一揭晓
-func DoFiledAndMethod(input interface{}) {
-
-	getType := reflect.TypeOf(input)
-	fmt.Println("get Type is :", getType.Name())
-
-	getValue := reflect.ValueOf(input)
-	fmt.Println("get all Fields is:", getValue)
-
-	// 获取方法字段
-	// 1. 先获取interface的reflect.Type，然后通过NumField进行遍历
-	// 2. 再通过reflect.Type的Field获取其Field
-	// 3. 最后通过Field的Interface()得到对应的value
-	for i := 0; i < getType.NumField(); i++ {
-		field := getType.Field(i)
-		value := getValue.Field(i).Interface()
-		fmt.Printf("%s: %v = %v\n", field.Name, field.Type, value)
-	}
-
-	// 获取方法
-	// 1. 先获取interface的reflect.Type，然后通过.NumMethod进行遍历
-	for i := 0; i < getType.NumMethod(); i++ {
-		m := getType.Method(i)
-		fmt.Printf("%s: %v\n", m.Name, m.Type)
-	}
+	fmt.Printf("%+v,%+v\n", *p1, p2)
 }
