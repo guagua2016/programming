@@ -10,27 +10,24 @@
 8. [goroutine交替执行,使其能顺序输出1-20的自然数code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/goroutine_example1.go)
 9. [生产者消费者模式code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/producer_consumer.go)
 10. 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781, channel关闭后读操作会发生什么？写操作会发生什么？
-11. golang 中reflect的理解？reflect.DeepEqual()?
-
-8. golang中的错误处理方式？error，nil，panic，recover？
-9. golang http 连接复用是怎么回事？resp.Body.Close()
-11. golang map 和 sync.map?
-12. reflect.DeepEqual()
-13. golang 单元测试，mock，性能分析？
-14. golang 接口对象断言？
+11. golang 中reflect的理解？reflect.DeepEqual()?如何结构体反射取出所有的成员？
+12. golang中的错误处理方式？error，nil，panic，recover？
+13. golang 接口对象断言？
+14. golang 单元测试，mock
+15. golang 性能分析？
+16. golang map 和 sync.map?
+17. golang 中的指针和unsafe包？
+18. golang sync.pool和连接池
+19. golang http 连接复用是怎么回事？resp.Body.Close()
 17. golang mysql？
-18. golang kafka?
-19. golang 中的指针和unsafe包？
-21. golang sync.pool和连接池
+18. golang kafka？
+
 
 
 ## C++
-
 ## 计算机基础
-
 ## 数据库/Kafka/Cache
 1. golang 与 mysql
-
 ## 网络
 1. TCP keepalive 和 http keep-alive 是怎么回事？ 心跳，连接复用
 
