@@ -5,7 +5,7 @@
 3. golang中的匿名函数？闭包？闭包延时绑定问题？用闭包写fibonacci数列？
 4. golang中的G-P-M调度模型？协程的状态流转？Grunnable、Grunning、Gwaiting等
 5. golang中的内存管理？对比C++中的内存管理？堆、栈和逃逸分析？三级内存管理？三色标记垃圾回收？
-6. golang怎么做goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
+6. golang怎么做Goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
 3. 协程交替执行,使其能顺序输出1-20的自然数
 4. 生产者消费者模式多个生产者多个消费者
 5. 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781
