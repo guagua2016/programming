@@ -16,6 +16,7 @@
 14. golang 单元测试，mock
 15. golang 性能分析？
 16. golang map 和 sync.map 实现原理？
+17. sync.Mutex 和 sync.RWMutex?
 17. golang 中的指针和unsafe包？
 18. golang sync.pool和连接池
 19. golang http 连接复用是怎么回事？resp.Body.Close()
