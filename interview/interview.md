@@ -2,28 +2,25 @@
 ## golang
 1. golang中的new和make区别？
 2. golang中的defer？调用时机？调用顺序？预计算值？
-3. golang中的匿名函数？闭包？闭包延时绑定问题？用闭包写fibonacci数列？
-4. golang中的G-P-M调度模型？协程的状态流转？Grunnable、Grunning、Gwaiting等
-5. golang中的内存管理？对比C++中的内存管理？堆、栈和逃逸分析？三级内存管理？三色标记垃圾回收？
-6. golang怎么做Goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
-3. [goroutine交替执行,使其能顺序输出1-20的自然数code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/goroutine_example1.go)
-4. [生产者消费者模式code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/producer_consumer.go)
-5. 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781
-6. channel关闭后读操作会发生什么？写操作会发生什么？
-7. golang中的main函数和init函数？
+3. golang中的main函数和init函数？
+4. golang中的匿名函数？闭包？闭包延时绑定问题？用闭包写fibonacci数列？
+5. golang中的G-P-M调度模型？协程的状态流转？Grunnable、Grunning、Gwaiting等
+6. golang中的内存管理？对比C++中的内存管理？堆、栈和逃逸分析？三级内存管理？三色标记垃圾回收？
+7. golang怎么做Goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
+8. [goroutine交替执行,使其能顺序输出1-20的自然数code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/goroutine_example1.go)
+9. [生产者消费者模式code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/producer_consumer.go)
+10. 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781, channel关闭后读操作会发生什么？写操作会发生什么？
+11. golang 中reflect的理解？reflect.DeepEqual()?
+
 8. golang中的错误处理方式？error，nil，panic，recover？
 9. golang http 连接复用是怎么回事？resp.Body.Close()
-10. golang defer？
 11. golang map 和 sync.map?
 12. reflect.DeepEqual()
 13. golang 单元测试，mock，性能分析？
 14. golang 接口对象断言？
-15. golang 内存管理和垃圾回收？？
-16. golang goroutine 调度？
 17. golang mysql？
 18. golang kafka?
 19. golang 中的指针和unsafe包？
-20. golang 中reflect的理解？
 21. golang sync.pool和连接池
 
 
