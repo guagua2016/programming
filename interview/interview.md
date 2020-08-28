@@ -17,7 +17,7 @@
 15. golang 性能分析？
 16. golang map的实现，图解，扩容，哈希冲突？非协程安全？map加sync.Mutex的方案？sync.map减少锁带来的影响，sync.map 实现原理，拓扑关系图？
 17. sync.Mutex 和 sync.RWMutex 互斥锁和读写锁的使用场景？
-17. golang 中的指针和unsafe包？
+17. golang 中的指针和unsafe包？golang指针退化，不支持类型转换和运算，需要使用借助unsafe包
 18. golang sync.pool和连接池
 19. golang http 连接复用是怎么回事？resp.Body.Close()
 17. golang mysql？
