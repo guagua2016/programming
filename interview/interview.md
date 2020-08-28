@@ -19,18 +19,18 @@
 17. sync.Mutex 和 sync.RWMutex 互斥锁和读写锁的使用场景？
 17. golang 中的指针和unsafe包？golang指针退化，不支持类型转换和运算，需要使用借助unsafe包
 18. golang sync.pool 临时对象池
-19. golang http 连接复用是怎么回事？resp.Body.Close()
-17. golang mysql？
-18. golang kafka？
-
-
+19. golang struct 比较？
+20. golang context 包的用途？
 
 ## C++
 ## 计算机基础
 ## 数据库/Kafka/Cache
 1. golang 与 mysql
+2. golang 与 kafka
 ## 网络
 1. TCP keepalive 和 http keep-alive 是怎么回事？ 心跳，连接复用
+2. golang 与 http 简单客户端和服务端的实现
+3. golang http 连接复用是怎么回事？resp.Body.Close()
 
 ## 操作系统
 
