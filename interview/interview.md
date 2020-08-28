@@ -32,6 +32,7 @@
 1. TCP keepalive 和 http keep-alive 是怎么回事？ 心跳，连接复用
 2. golang 与 http 简单客户端和服务端的实现
 3. golang http 连接复用是怎么回事？resp.Body.Close()
+4. netstat 查看链接的状态
 
 ## 操作系统
 
