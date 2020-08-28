@@ -15,7 +15,7 @@
 13. golang 接口对象断言？
 14. golang 单元测试，mock
 15. golang 性能分析？
-16. golang map的实现？非协程安全。map加sync.Mutex的方案？sync.map减少锁带来的影响，sync.map 实现原理，拓扑关系图？
+16. golang map的实现，图解，扩容，哈希冲突？非协程安全？map加sync.Mutex的方案？sync.map减少锁带来的影响，sync.map 实现原理，拓扑关系图？
 17. sync.Mutex 和 sync.RWMutex?
 17. golang 中的指针和unsafe包？
 18. golang sync.pool和连接池
