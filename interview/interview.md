@@ -19,7 +19,7 @@
 17. sync.Mutex 和 sync.RWMutex 互斥锁和读写锁的使用场景？
 17. golang 中的指针和unsafe包？golang指针退化，不支持类型转换和运算，需要使用借助unsafe包
 18. golang sync.pool 临时对象池
-19. golang struct 比较？
+19. golang struct 可以比较吗？引用类型不可比较？reflect.DeepEqual的比较？
 20. golang context 包的用途？
 
 ## C++
