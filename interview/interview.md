@@ -22,6 +22,8 @@
 19. golang struct 可以比较吗？引用类型不可比较？reflect.DeepEqual的比较？
 20. golang context 包的用途？
 21. golang select 的用途？
+22. golang 中的空结构体？
+23. golang 总的set？
 
 ## C++
 ## 计算机基础
