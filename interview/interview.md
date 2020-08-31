@@ -24,6 +24,7 @@
 21. golang select 的用途？
 22. golang 中的空结构体？
 23. golang 总的set？
+24. golang 的编译过程？
 
 ## C++
 ## 计算机基础
