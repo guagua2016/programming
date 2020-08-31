@@ -31,6 +31,10 @@
 ## 数据库/Kafka/Cache
 1. golang 与 mysql
 2. golang 与 kafka
+3. golang sql 链接池的实现
+4. golang http 连接池的实现
+
+
 ## 网络
 1. 浅谈对http协议的认识，使用场景，http协议的请求和回包的结构？
 2. http协议的状态码含义？200,404,403，502
