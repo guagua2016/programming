@@ -46,52 +46,9 @@
 3. 死锁的条件
 
 
-二、golang语言基本特性
-channe关闭后，读操作会怎么样？如何优雅的关闭channel？
-golang中的main和init函数？
-golang中的defer、panic和recover和错误处理方式？
-golang中的select关键字？
-goalng中的struct可以进行比较吗？了解reflect.DeepEqual吗？
-golang中的set实现？map[interface{}]struct{}
-goalng中的生产者消费者模式？
-golang中的context包的用途？
-golang的编译过程？
-golang闭包的概念？
-golang中可以对只运行一次的函数定义为匿名函数，匿名函数对外部变量使用的是引用
-将匿名函数赋值为一个变量，该变量就称为一个闭包，为闭包对外层词法域变量是引用的。
-
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-
-	x := 1
-	f := func() int {
-		x++
-		return x
-	}
-
-	fmt.Println(f())
-	fmt.Println(f())
-}
-golang 逃逸分析。go在一定程度消除了堆和栈的区别，因为go在编译的时候进行逃逸分析，来决定一个对象放栈上还是放堆上，不逃逸的对象放栈上，可能逃逸的放堆上
-
-三、高级主题
-2.1. golang中的协程调度？
-2.2. golang中的context包？
-https://juejin.im/post/5a6873fef265da3e317e55b6
-https://www.flysnow.org/2017/05/12/go-in-action-go-context.html
-
-2.3 主协程如何等待其余协程完再操作？协程同步的三种方式？
-2.4.golang网络编程点点滴滴？
-https://colobu.com/2014/12/02/go-socket-programming-TCP/
-2.4.1 client如何实现长连接？
 
 
-go的调度模型
+
 go的锁如何实现，用了什么cpu指令
 go的runtime如何实现
 
