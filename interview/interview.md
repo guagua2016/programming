@@ -34,7 +34,7 @@
 3. http 1.1中的keep-alive字段的含义，长连接和短连接
 4. TCP 链接的建立和状态流转
 5. golang 与 http 简单客户端和服务端的实现
-6. golang http 连接复用是怎么回事？resp.Body.Close()
+6. golang http 连接复用是怎么回事？resp.Body.Close()，TIME_WAIT，https://studygolang.com/articles/28263
 7. netstat 查看链接的状态
 
 ## 操作系统
