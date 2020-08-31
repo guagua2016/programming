@@ -38,17 +38,12 @@
 7. netstat 查看链接的状态
 
 ## 操作系统
+1. 大文件排序？内存不够的情况下，使用归并排序
+2. 孤儿进程和僵尸进程？
+3. 死锁的条件
 
 
-大文件排序？内存不够的情况下，使用归并排序
-网络编程中的http keep-alive，tcp keepalive 和 TIME_WAIT是怎么回事？Time_WAIT有什么作用？
-https://www.cnblogs.com/yjf512/p/5354055.html
-http://www.nowamagic.net/academy/detail/23350375
-https://zhuanlan.zhihu.com/p/40013724
-孤儿进程和僵尸进程？
-死锁的条件
 二、golang语言基本特性
-
 channe关闭后，读操作会怎么样？如何优雅的关闭channel？
 golang中的main和init函数？
 golang中的defer、panic和recover和错误处理方式？
