@@ -32,12 +32,10 @@
 1. 浅谈对http协议的认识，使用场景，http协议的请求和回包的结构？
 2. http协议的状态码含义？200,404,403，502
 3. http 1.1中的keep-alive字段的含义，长连接和短连接
-4. 
-
-1. TCP keepalive 和 http keep-alive 是怎么回事？ 心跳，连接复用
-2. golang 与 http 简单客户端和服务端的实现
-3. golang http 连接复用是怎么回事？resp.Body.Close()
-4. netstat 查看链接的状态
+4. TCP 链接的建立和状态流转
+5. golang 与 http 简单客户端和服务端的实现
+6. golang http 连接复用是怎么回事？resp.Body.Close()
+7. netstat 查看链接的状态
 
 ## 操作系统
 
