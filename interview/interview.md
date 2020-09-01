@@ -26,7 +26,8 @@
 23. golang 总的set？
 24. golang 的编译过程？
 25. golang runtime 了解多少？
-26. golang 什么情况下会发生内存泄漏？（他说ctx没有cancel的时候，这个真不知道）
+26. golang 什么情况下会发生内存泄漏？Goroutinue泄露？
+
 
 ## C++
 ## 计算机基础
