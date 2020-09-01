@@ -1,33 +1,33 @@
 
 ## golang
-1. golang中的new和make区别？
-2. golang中的defer？调用时机？调用顺序？预计算值？
-3. golang中的main函数和init函数？
-4. golang中的匿名函数？闭包？闭包延时绑定问题？用闭包写fibonacci数列？
-5. golang中的G-P-M调度模型？协程的状态流转？Grunnable、Grunning、Gwaiting等
-6. golang中的内存管理？对比C++中的内存管理？堆、栈和逃逸分析？三级内存管理？三色标记垃圾回收？
-7. golang怎么做Goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
-8. [goroutine交替执行,使其能顺序输出1-20的自然数code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/goroutine_example1.go)
-9. [生产者消费者模式code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/producer_consumer.go)
-10. 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781, channel关闭后读操作会发生什么？写操作会发生什么？
-11. golang 中reflect的理解？reflect.DeepEqual()?如何结构体反射取出所有的成员？
-12. golang中的错误处理方式？error，nil，panic，recover？
-13. golang 接口对象断言？
-14. golang 单元测试，mock
-15. golang 性能分析？
-16. golang map的实现，图解，扩容，哈希冲突？非协程安全？map加sync.Mutex的方案？sync.map减少锁带来的影响，sync.map 实现原理，拓扑关系图？
-17. sync.Mutex 和 sync.RWMutex 互斥锁和读写锁的使用场景？
-17. golang 中的指针和unsafe包？golang指针退化，不支持类型转换和运算，需要使用借助unsafe包
-18. golang sync.pool 临时对象池
-19. golang struct 可以比较吗？引用类型不可比较？reflect.DeepEqual的比较？
-20. golang context 包的用途？
-21. golang select 的用途？
-22. golang 中的空结构体？
-23. golang 总的set？
-24. golang 的编译过程？
-25. golang runtime 了解多少？
-26. golang 什么情况下会发生内存泄漏？Goroutinue泄露？
-
+### golang中的new和make区别？
+### golang中的defer？调用时机？调用顺序？预计算值？
+### golang中的main函数和init函数？
+### golang中的匿名函数？闭包？闭包延时绑定问题？用闭包写fibonacci数列？
+### golang中的G-P-M调度模型？协程的状态流转？Grunnable、Grunning、Gwaiting等
+### golang中的内存管理？对比C++中的内存管理？堆、栈和逃逸分析？三级内存管理？三色标记垃圾回收？
+### golang怎么做Goroutine之间的同步？channel、sync.mutex、sync.WaitGroup、context，锁怎么实现，用了什么cpu指令?
+### [goroutine交替执行,使其能顺序输出1-20的自然数code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/goroutine_example1.go)
+### [生产者消费者模式code](https://github.com/wxquare/programming/blob/master/golang/learn_golang/producer_consumer.go)
+### 如何优雅的关闭channel？https://www.jianshu.com/p/d24dfbb33781, channel关闭后读操作会发生什么？写操作会发生什么？
+### golang 中reflect的理解？reflect.DeepEqual()?如何结构体反射取出所有的成员？
+### golang中的错误处理方式？error，nil，panic，recover？
+### golang 接口对象断言？
+### golang 单元测试，mock
+### golang 性能分析？
+### golang map的实现，图解，扩容，哈希冲突？非协程安全？map加sync.Mutex的方案？sync.map减少锁带来的影响，sync.map 实现原理，拓扑关系图？
+### sync.Mutex 和 sync.RWMutex 互斥锁和读写锁的使用场景？
+### golang 中的指针和unsafe包？golang指针退化，不支持类型转换和运算，需要使用借助unsafe包
+### golang sync.pool 临时对象池
+### golang struct 可以比较吗？引用类型不可比较？reflect.DeepEqual的比较？
+### golang context 包的用途？
+### golang select 的用途？
+### golang 中的空结构体？
+### golang 总的set？
+### golang 的编译过程？
+### golang runtime 了解多少？
+### golang 什么情况下会发生内存泄漏？Goroutinue泄露？
+### golang 协程退出？
 
 ## C++
 ## 计算机基础
